@@ -1,59 +1,25 @@
 <template>
-  <!-- <nav id="nav-top" class="navbar navbar-expand-lg sticky-top bg-body py-4"> -->
   <el-menu
+    :default-active="activeIndex"
     class="el-menu-demo"
     mode="horizontal"
     :ellipsis="false"
     @select="handleSelect"
-    v-for="item in navList"
-    :key="item.id"
   >
-    <el-menu-item index="0">
-      <el-icon class="icetea"><IceTea /></el-icon>
-      沁記茶行
+    <el-menu-item>
+      <el-icon class="icetea" :size="50" color="#000"><IceTea /></el-icon>
+      <el-text tag="b" size="large">沁記茶行</el-text>
       <!-- <img style="width: 100px" src="" alt="Element logo" /> -->
     </el-menu-item>
-    <div class="flex-grow" />
-    <el-menu-item index="1"></el-menu-item>
-    <el-menu-item index="2"> </el-menu-item>
-    <el-menu-item index="3">
-      <el-badge v-if="item.type === 'icon'">
-        <el-button :icon="ShoppingCart" />
-      </el-badge>
-      <el-button v-else link @click="changePage(item.link)">{{ item.title }}</el-button>
-    </el-menu-item>
+    <ul class="navbar">
+      <li class="nav-item" v-for="item in navList" :key="item.id">
+        <el-badge v-if="item.type === 'icon'">
+          <el-button :icon="ShoppingCart" />
+        </el-badge>
+        <el-button v-else link @click="changePage(item.link)">{{ item.title }}</el-button>
+      </li>
+    </ul>
   </el-menu>
-
-  <!-- <el-button v-else link @click="changePage(item.link)">{{ item.title }}</el-button> -->
-  <!-- <div class="container px-sm-0"> -->
-  <!-- <RouterLink class="navbar-brand fs-2 me-0 pt-0" style="white-space: normal" to="/"> -->
-  <!-- <i class="bi bi-bullseye"></i> -->
-  <!-- <el-icon class="icetea"><IceTea /></el-icon>
-      沁記茶行 -->
-  <!-- </RouterLink> -->
-
-  <!-- <button
-      class="navbar-toggler bg-primary"
-      type="button"
-      @click="toggleNav"
-      aria-controls="navbarNav"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <span class="navbar-toggler-icon"></span>
-    </button> -->
-  <!-- <div class="collapse navbar-collapse" ref="myNavBarRef">
-      <ul class="navbar-nav ms-auto fs-5 text-nowrap"> -->
-  <!-- <li class="nav-item mx-2" v-for="item in navList" :key="item.id"> -->
-  <!-- <el-badge v-if="item.type === 'icon'" is-dot :value="3">
-            <el-button :icon="ShoppingCart" />
-          </el-badge>
-          <el-button v-else link @click="changePage(item.link)">{{ item.title }}</el-button>
-        </li> -->
-  <!-- </ul> -->
-  <!-- </div> -->
-  <!-- </div> -->
-  <!-- </nav> -->
 </template>
   <script setup>
 import { ref } from 'vue' //響應式
@@ -91,19 +57,18 @@ const navList = ref([
 </script>
   
   <style lang="scss" scoped>
-.header {
+.navbar {
   display: flex;
-  justify-content: center;
+  justify-content: end;
   align-items: center;
   padding: 20px;
-  position: fixed;
+  position: relative;
   width: 100%;
-}
-.icetea {
-  color: black;
-}
-.flex-grow {
-  flex-grow: 1;
+
+  .nav-item {
+    list-style-type: none;
+    padding: 0 20px;
+  }
 }
 </style>
   

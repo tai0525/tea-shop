@@ -12,18 +12,23 @@ const router = createRouter({
     {
       path: '/about',
       name: 'About',
-      component: () => import('../views/About/index.vue')
+      component: () => import('@/views/About/index.vue')
     },
     {
       path: '/knowledge',
       name: 'Knowledge',
-      component: () => import('../views/Knowledge/index.vue')
+      component: () => import('@/views/Knowledge/index.vue')
     },
     {
       path: '/products',
       name: 'Products',
-      component: () => import('../views/Products/index.vue')
+      component: () => import('@/views/Products/index.vue')
     },
+    {
+      path: '/login',
+      name: 'Login',
+      component: () => import('@/views/Login/index.vue')
+    }
   ]
 })
 

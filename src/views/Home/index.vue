@@ -1,7 +1,5 @@
 <template>
-  <tea-front-layout>
-    <div>123</div>
-  </tea-front-layout>
+  <tea-front-layout> </tea-front-layout>
 </template>
 
 <script setup>
