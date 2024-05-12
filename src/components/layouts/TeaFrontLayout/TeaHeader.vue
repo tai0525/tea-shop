@@ -1,25 +1,30 @@
 <template>
-  <el-menu
-    :default-active="activeIndex"
-    class="el-menu-demo"
-    mode="horizontal"
-    :ellipsis="false"
-    @select="handleSelect"
-  >
-    <el-menu-item>
-      <el-icon class="icetea" :size="50" color="#000"><IceTea /></el-icon>
-      <el-text tag="b" size="large">沁記茶行</el-text>
-      <!-- <img style="width: 100px" src="" alt="Element logo" /> -->
-    </el-menu-item>
-    <ul class="navbar">
-      <li class="nav-item" v-for="item in navList" :key="item.id">
-        <el-badge v-if="item.type === 'icon'">
-          <el-button :icon="ShoppingCart" />
-        </el-badge>
-        <el-button v-else link @click="changePage(item.link)">{{ item.title }}</el-button>
-      </li>
-    </ul>
-  </el-menu>
+  <body>
+    <div class="">
+      <nav class="p-5 md:flex md:items-center md:justify-between">
+        <div class="flex justify-between items-center">
+          <el-icon class="icetea" :size="30" color="#000"><IceTea /></el-icon>
+          <router-link :to="'/home'">
+            <h1 class="px-1 text-2xl font-bold">沁記茶行</h1>
+          </router-link>
+          <!-- <ion-icon name="menu" onclick="menu(this)"></ion-icon> -->
+        </div>
+        <!-- @click="$router.push({ path: '/home' })" -->
+        <ul
+          class="md:flex md:items-center md:static absolute w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-6"
+        >
+          <li class="mx-4 my-4 md:my-0" v-for="item in navList" :key="item.id">
+            <el-badge v-if="item.type === 'icon'">
+              <el-button :icon="ShoppingCart" />
+            </el-badge>
+            <el-button class="text-xl" v-else link @click="changePage(item.link)">{{
+              item.title
+            }}</el-button>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </body>
 </template>
   <script setup>
 import { ref } from 'vue' //響應式
@@ -55,20 +60,4 @@ const navList = ref([
   }
 ])
 </script>
-  
-  <style lang="scss" scoped>
-.navbar {
-  display: flex;
-  justify-content: end;
-  align-items: center;
-  padding: 20px;
-  position: relative;
-  width: 100%;
-
-  .nav-item {
-    list-style-type: none;
-    padding: 0 20px;
-  }
-}
-</style>
   

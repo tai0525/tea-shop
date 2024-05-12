@@ -1,32 +1,36 @@
 <template>
-  <div class="login-box">
-    <h1>請先登入</h1>
-    <el-form
-      ref="formRef"
-      style="max-width: 300px"
-      :model="validateForm"
-      label-width="auto"
-      class="demo-ruleForm"
+  <div
+    class="flex justify-center items-center h-screen bg-center bg-no-repeat bg-[url('https://i.pinimg.com/564x/1b/fd/3c/1bfd3cda9146c40b5759244349318146.jpg')] bg-cover"
+  >
+    <div
+      class="absolute w-80 box-border shadow-lg shadow-slate-950 p-4 rounded-md border-solid border-2 border-stone-200"
     >
-      <el-form-item
-        label="帳號"
-        prop="email"
-        :rules="[{ type: 'email', message: 'Please input correct email address' }]"
+      <h1 class="text-center text-2xl text-gray-700 font-semibold pb-2">請先登入</h1>
+      <el-form
+        ref="formRef"
+        style="max-width: 300px"
+        :model="validateForm"
+        label-width="auto"
+        class="demo-ruleForm"
       >
-        <el-input v-model="validateForm.email" type="text" autocomplete="off" />
-      </el-form-item>
-      <el-form-item label="密碼" prop="password" :rules="[]">
-        <el-input v-model="validateForm.password" type="password" autocomplete="off" />
-      </el-form-item>
-      <div class="button">
-        <el-form-item>
-          <el-button @click="submitForm(formRef)">送出</el-button>
-          <el-button
-            ><RouterLink to="/" class="w-100 btn btn-primary">回首頁</RouterLink></el-button
-          >
+        <el-form-item
+          label="帳號"
+          prop="email"
+          :rules="[{ type: 'email', message: 'Please input correct email address' }]"
+        >
+          <el-input v-model="validateForm.email" type="text" autocomplete="off" />
         </el-form-item>
-      </div>
-    </el-form>
+        <el-form-item label="密碼" prop="password" :rules="[]">
+          <el-input v-model="validateForm.password" type="password" autocomplete="off" />
+        </el-form-item>
+        <div class="button">
+          <el-form-item class="grid justify-items-center">
+            <el-button @click="submitForm(formRef)">送出</el-button>
+            <el-button>回首頁</el-button>
+          </el-form-item>
+        </div>
+      </el-form>
+    </div>
   </div>
 </template>
 
@@ -34,6 +38,7 @@
   <script lang="ts" setup>
 import { reactive, ref } from 'vue'
 import type { FormInstance } from 'element-plus'
+// import { useI18n } from 'vue-i18n'
 
 const formRef = ref<FormInstance>()
 
@@ -60,29 +65,10 @@ const resetForm = (formEl: FormInstance | undefined) => {
 </script>
 
 <style lang="scss" scoped>
-.login-box {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 400px;
-  padding: 40px;
-  transform: translate(-50%, -50%);
-  background: rgb(219, 212, 112);
-  box-sizing: border-box;
-  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
-  border-radius: 10px;
-
-  h1 {
-    margin: 0 0 30px;
-    padding: 0;
-    color: #fff;
-    text-align: center;
-  }
-
-  .button {
-    margin: 10px 0 0 30%;
-    // padding: 10px 60px;
-  }
-}
+//   .button {
+//     margin: 10px 0 0 30%;
+//     // padding: 10px 60px;
+//   }
+// }
 </style>
   
