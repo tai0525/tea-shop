@@ -1,24 +1,42 @@
 <template>
-  <tea-front-layout>
-    <tea-search-btn />
-    <tea-intro-card
-      v-for="item in TeaIntroCardList"
-      :key="item.page"
-      :title="item.title"
-      :image="item.image"
-      :desc="item.desc"
-      :btn-title="item.btnTitle"
-      :page="item.page"
-      :is-reverse="item.isReverse"
-    />
-    <tea-carousel />
-  </tea-front-layout>
+  <button @click="login">點我</button>
+  <banner-view />
+  <banner-discount />
+  <tea-search-btn />
+  <tea-intro-card
+    v-for="item in TeaIntroCardList"
+    :key="item.page"
+    :title="item.title"
+    :image="item.image"
+    :desc="item.desc"
+    :btn-title="item.btnTitle"
+    :page="item.page"
+    :is-reverse="item.isReverse"
+  />
+  <tea-carousel />
 </template>
 
 <script setup>
-import TeaFrontLayout from '@/components/layouts/TeaFrontLayout/index.vue'
+import BannerView from './BannerView.vue'
+import BannerDiscount from './BannerDiscount.vue'
 import TeaSearchBtn from '@/components/TeaSearchBtn/index.vue'
 import TeaIntroCard from '@/components/TeaIntroCard/index.vue'
+import TeaCarousel from '@/components/TeaCarousel/index.vue'
+import { useUserStore } from '@/stores/user'
+import { userApi } from '@/api/module/user'
+import { setToken } from '@/utils/localStorage'
+
+const userStore = useUserStore()
+const login = async () => {
+  const { code, data } = await userApi.login()
+  if (code === 200) {
+    const { token } = data
+    //更新數據
+    setToken(token)
+  }
+  //重新渲染
+  userStore.setIsLogin(true)
+}
 const TeaIntroCardList = [
   {
     image:
@@ -38,8 +56,4 @@ const TeaIntroCardList = [
     isReverse: true
   }
 ]
-import TeaCarousel from '@/components/TeaCarousel/index.vue'
 </script>
-
-<style lang="scss">
-</style>

@@ -1,15 +1,22 @@
+// TODO: 改寫 router view
 <template>
-  <tea-header />
-  <banner-view />
-  <banner-discount />
-
-  <slot />
+  <tea-header :is-login="isPageLogin" />
+  <router-view />
   <tea-footer />
 </template>
 <script setup>
 import TeaHeader from './TeaHeader.vue'
-import BannerView from './BannerView.vue'
-import BannerDiscount from './BannerDiscount.vue'
-
 import TeaFooter from './TeaFooter.vue'
+import { defineProps, computed } from 'vue'
+// TODO: 登入狀態
+import { useUserStore } from '@/stores/user'
+const userStore = useUserStore()
+const isPageLogin = computed(() => userStore.isLogin)
+
+defineProps({
+  isLogin: {
+    type: Boolean,
+    default: false
+  }
+})
 </script>

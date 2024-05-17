@@ -1,4 +1,18 @@
 {
-    "login":"登入",
-    "loginout": "登出"
+  "login": "登入",
+  "loginout": "登出",
+  "first_login": "請先登入",
+  "message": {
+    "login_success": "登入成功",
+    "login_fail": "登入失敗"
+  },
+  "home": "回首頁",
+  "submit": "送出",
+  "about_us": "關於我們",
+  "contact_us": "聯絡我們",
+  "contact_content": "有任何問題，歡迎與我們聯繫。",
+  "chinji": "沁記茶行",
+  "search_tea": "搜尋好茶",
+  "slogan": "茶味經典，沁記嚴選。",
+  "click_me": "點我領取"
 }

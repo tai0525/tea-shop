@@ -5,7 +5,7 @@
     <div
       class="absolute w-80 box-border shadow-lg shadow-slate-950 p-4 rounded-md border-solid border-2 border-stone-200"
     >
-      <h1 class="text-center text-2xl text-gray-700 font-semibold pb-2">請先登入</h1>
+      <h1 class="text-center text-2xl text-gray-700 font-semibold pb-2">{{ t('first_login') }}</h1>
       <el-form
         ref="formRef"
         style="max-width: 300px"
@@ -25,8 +25,8 @@
         </el-form-item>
         <div class="button">
           <el-form-item class="grid justify-items-center">
-            <el-button @click="submitForm(formRef)">送出</el-button>
-            <el-button>回首頁</el-button>
+            <el-button @click="submitForm(formRef)">{{ t('submit') }}</el-button>
+            <el-button>{{ t('home') }}</el-button>
           </el-form-item>
         </div>
       </el-form>
@@ -35,18 +35,19 @@
 </template>
 
   
-  <script lang="ts" setup>
+  <script setup>
+import { useI18n } from 'vue-i18n'
 import { reactive, ref } from 'vue'
-import type { FormInstance } from 'element-plus'
-// import { useI18n } from 'vue-i18n'
 
-const formRef = ref<FormInstance>()
+const { t } = useI18n()
+
+const formRef = ref()
 
 const validateForm = reactive({
   email: ''
 })
 
-const submitForm = (formEl: FormInstance | undefined) => {
+const submitForm = (formEl) => {
   if (!formEl) return
   formEl.validate((valid) => {
     if (valid) {
@@ -58,17 +59,10 @@ const submitForm = (formEl: FormInstance | undefined) => {
   })
 }
 
-const resetForm = (formEl: FormInstance | undefined) => {
+const resetForm = (formEl) => {
   if (!formEl) return
   formEl.resetFields()
 }
 </script>
 
-<style lang="scss" scoped>
-//   .button {
-//     margin: 10px 0 0 30%;
-//     // padding: 10px 60px;
-//   }
-// }
-</style>
   

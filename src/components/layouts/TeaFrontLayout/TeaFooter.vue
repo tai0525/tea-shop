@@ -3,14 +3,9 @@
     <!-- <div class=""> -->
     <div class="justify-center">
       <ul class="p-3 flex items-center justify-center" v-for="item in footerList" :key="item.id">
-        <li>
-          <Link style="width: 2em; margin-right: 15px" />
-        </li>
-        <li><Share style="width: 2em; margin-right: 15px" /></li>
-        <li><Location style="width: 2em; margin-right: 15px" /></li>
-        <li>
+        <!-- <li>
           <UserFilled style="width: 2em; margin-right: 15px" link @click="changePage(item.link)" />
-        </li>
+        </li> -->
 
         <!-- <routerLink :to="'/login'">
             <el-icon><UserFilled /></el-icon>
