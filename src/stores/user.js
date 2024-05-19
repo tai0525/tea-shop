@@ -1,6 +1,6 @@
 import { ref } from 'vue'
 import { defineStore } from 'pinia'
-import { getToken } from 'pinia'
+import { getToken } from '@/utils/localStorage'
 
 
 

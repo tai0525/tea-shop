@@ -1,12 +1,9 @@
-import { ref } from 'vue'
-import { defineStore } from 'pinia'
-import { getToken } from '@/utils/localStorage'
+import server from '../index'
 
-export const useUserStore = defineStore('user', () => {
-    const isLogin = ref(getToken()) // TODO: 改getToken
-    const setIsLogin = (bool) => {
-        isLogin.value = bool
+export const userApi = {
+    login: async () => {
+        const data = await server.post('/login')
+        return data
     }
+}
 
-    return { isLogin, setIsLogin }
-})
