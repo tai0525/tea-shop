@@ -1,5 +1,4 @@
 <template>
-  <button @click="login">點我</button>
   <banner-view />
   <banner-discount />
   <tea-search-btn />
@@ -22,21 +21,7 @@ import BannerDiscount from './BannerDiscount.vue'
 import TeaSearchBtn from '@/components/TeaSearchBtn/index.vue'
 import TeaIntroCard from '@/components/TeaIntroCard/index.vue'
 import TeaCarousel from '@/components/TeaCarousel/index.vue'
-import { useUserStore } from '@/stores/user'
-import { userApi } from '@/api/module/user'
-import { setToken } from '@/utils/localStorage'
 
-const userStore = useUserStore()
-const login = async () => {
-  const { code, data } = await userApi.login()
-  if (code === 200) {
-    const { token } = data
-    //更新數據
-    setToken(token)
-  }
-  //重新渲染
-  userStore.setIsLogin(true)
-}
 const TeaIntroCardList = [
   {
     image:

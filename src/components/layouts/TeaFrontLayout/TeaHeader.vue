@@ -32,14 +32,21 @@ import { ElButton } from 'element-plus'
 import { ShoppingCart } from '@element-plus/icons-vue'
 import { useI18n } from 'vue-i18n'
 import { removeToken } from '@/utils/localStorage'
+import { useUserStore } from '@/stores/user'
 
 const { t } = useI18n()
+
+const userStore = useUserStore()
 
 const router = useRouter() //到此頁面
 const changePage = (link) => {
   router.push(link)
 }
-const logout = () => removeToken()
+
+const logout = () => {
+  removeToken()
+  userStore.setIsLogin(false)
+}
 const props = defineProps({
   isLogin: {
     type: Boolean,

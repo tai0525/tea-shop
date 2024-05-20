@@ -16,15 +16,15 @@ const router = createRouter({
   ]
 })
 
-router.beforeEach((to, from, next) => {
-  if (to?.meta?.title) {
-    document.title = to.meta.title
-  }
-  // 不指定參數 => 放行
-  next()
-  // 指定參數 => 跳轉到具體指定路由
-  // TODO: 之後進結帳頁面或後台可以在這邊寫條件再放行
-  // next({ path: '/about' })
-})
+// router.beforeEach((to, from, next) => {
+//   if (to?.meta?.title) {
+//     document.title = to.meta.title
+//   }
+// 不指定參數 => 放行
+// next()
+// 指定參數 => 跳轉到具體指定路由
+// TODO: 之後進結帳頁面或後台可以在這邊寫條件再放行
+// next({ path: '/about' })
+// })
 
 export default router

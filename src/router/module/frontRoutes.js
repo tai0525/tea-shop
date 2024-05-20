@@ -45,6 +45,30 @@ export const frontRoutes = [
                     title: '所有商品'
                 }
             },
+            {
+                path: 'productDetail/:id',
+                name: 'productDetail',
+                component: () => import('@/views/ProductDetail/index.vue'),
+                meta: {
+                    title: '商品詳細頁'
+                }
+            },
+            {
+                path: '/cart',
+                name: 'cart',
+                component: () => import('@/views/Cart/index.vue'),
+                meta: {
+                    title: '購物車'
+                }
+            },
+            {
+                path: 'checkout',
+                name: 'checkout',
+                component: () => import('@/views/Checkout/index.vue'),
+                meta: {
+                    title: '結帳頁'
+                }
+            },
         ]
     }
 ]

@@ -1,17 +1,86 @@
 [
   {
     "id": 1,
-    "name": "阿里山茶",
-    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCF0Bqoi2uOBIWuetRV3QMs7Asxzcs9yDhGnS2UpYuhg&s"
+    "name": "阿里山清香高山茶",
+    "category": "阿里山系列",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCF0Bqoi2uOBIWuetRV3QMs7Asxzcs9yDhGnS2UpYuhg&s",
+    "price": 90
   },
   {
     "id": 2,
-    "name": "紅玉紅茶",
-    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVNOPuKqhP9snioGRUSOI-MbUzNJ05hw19mr-cMu5BIg&s"
+    "name": "阿里山烏龍茶",
+    "category": "阿里山系列",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdVOp8gwyk0g_oq_IATlNyDznqvo86P05ZU7zFTzxliQ&s",
+    "price": 240
   },
   {
     "id": 3,
+    "name": "阿里山奶香金萱茶",
+    "category": "阿里山系列",
+    "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcR-B9bx-WqwU2nj-6NxfjlsX8NIqF-zm_-e_YLzPC3cw6zHcCR8e-kGxKm5ripNXuvOyvPwiBJQUpEKPb5nmS3_fZWSmCK_XSSyWMvy6H24Yf8aMxSNvQp5TO7krA&usqp=CAc",
+    "price": 90
+  },
+  {
+    "id": 4,
+    "name": "日月潭紅玉紅茶",
+    "category": "台灣紅茶系列",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVNOPuKqhP9snioGRUSOI-MbUzNJ05hw19mr-cMu5BIg&s",
+    "price": 450
+  },
+  {
+    "id": 5,
+    "name": "日月潭蜜香紅茶",
+    "category": "台灣紅茶系列",
+    "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQfQVLKN1F4MItS5m5u6H3uppOwm_6XszFl7IuzY5JaJ0u46N6LETUt2emcaJ6vYcCWK84XDUfkxiqAMZI0MKK7Hi5dFSBvJ2knLyUqrILhnyfcOGMYZ0kupXxgwe6wm0bk4qNVFw&usqp=CAc",
+    "price": 470
+  },
+  {
+    "id": 6,
+    "name": "梨山紅韻",
+    "category": "台灣紅茶系列",
+    "image": "https://cdn01.pinkoi.com/product/UeQbgRsN/1/640x530.jpg",
+    "price": 450
+  },
+  {
+    "id": 7,
     "name": "凍頂烏龍茶",
-    "image": "https://www.teaez.com/Archive/_tw/products/p0009/2202256115.jpg"
+    "category": "凍頂烏龍茶系列",
+    "image": "https://www.teaez.com/Archive/_tw/products/p0009/2202256115.jpg",
+    "price": 280
+  },
+  {
+    "id": 8,
+    "name": "頂級凍頂烏龍茶",
+    "category": "凍頂烏龍茶系列",
+    "image": "https://s.yimg.com/ob/image/49cbf536-399f-483e-839e-585e38ad6ee6.jpg",
+    "price": 500
+  },
+  {
+    "id": 9,
+    "name": "炭焙凍頂烏龍茶",
+    "category": "凍頂烏龍茶系列",
+    "image": "https://down-tw.img.susercontent.com/file/tw-11134207-7r990-lnwrae0iboe126",
+    "price": 280
+  },
+  {
+    "id": 10,
+    "name": "中國風蓋杯",
+    "category": "茶具全系列",
+    "image": "https://down-tw.img.susercontent.com/file/0eb7a2e4f7345c841117237dff1705c4",
+    "price": 500
+  },
+  {
+    "id": 11,
+    "name": "玻璃茶壺",
+    "category": "茶具全系列",
+    "image": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQ2BBhIQ2Hi7JMUWIoLy5J5mrD4iXK9RgPKBJIggSYs6ignQMXB",
+    "price": 300
+  },
+  {
+    "id": 12,
+    "name": "鴿嘴水平壺",
+    "category": "茶具全系列",
+    "image": "https://www.teapotway.com/wp-content/uploads/2022/06/20220529_155211_01.jpeg",
+    "price": 1000
   }
 ]
