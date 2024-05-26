@@ -17,7 +17,7 @@
             class="text-xl"
             v-else
             link
-            @click="isLogin ? logout : changePage(item.link)"
+            @click="isLogin ? logout() : changePage(item.link)"
             >{{ item.title }}</el-button
           >
         </li>
@@ -35,7 +35,6 @@ import { removeToken } from '@/utils/localStorage'
 import { useUserStore } from '@/stores/user'
 
 const { t } = useI18n()
-
 const userStore = useUserStore()
 
 const router = useRouter() //到此頁面

@@ -2,31 +2,22 @@
   <div class="container">
     <el-row class="items-center my-5" :gutter="20">
       <el-col :span="4">
-        <h5 class="my-2 text-center">產品分類</h5>
-        <el-menu class="el-menu-vertical-demo">
+        <h5 class="my-2 absolute top-0">產品分類</h5>
+        <el-menu class="el-menu-vertical-demo absolute top-10">
           <el-menu-item v-for="item in categoryMenu" :key="item.id" :index="id">
             <span>{{ item.name }}</span>
           </el-menu-item>
         </el-menu>
       </el-col>
       <el-col :span="20">
-        <el-row class="">
-          <el-card
-            style="max-width: 380px"
-            shadow="hover"
-            class="mx-3"
-            @click="goToProduct(item.id)"
-          >
-            <img
-              src="https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png"
-              style="width: 100%"
-            />
-            <div class="text-center text-main text-lg font-semibold py-2">Hamburger</div>
-            <el-row class="justify-between pt-2 font-semibold text-lg"
-              >NT$120
-              <el-button color="#994e3d" :dark="isDark">加入購物車</el-button>
-            </el-row>
-          </el-card>
+        <el-row>
+          <tea-product-card
+            v-for="item in cards"
+            :key="item.id"
+            :image="item.image"
+            :name="item.name"
+            :price="item.price"
+          />
         </el-row>
       </el-col>
     </el-row>
@@ -34,8 +25,23 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
+import TeaProductCard from '@/components/TeaProductCard/index.vue'
+import { productApi } from '@/api/module/product'
+import { setProducts } from '@/utils/localStorage'
+
+const cards = ref([])
+
+const getProducts = async () => {
+  const { code, data } = await productApi.getProducts()
+  if (code === 200) {
+    // 渲染畫面
+    cards.value = data
+    // 儲存資料
+    setProducts(data)
+  }
+}
 
 const router = useRouter()
 const goToProduct = (id) => {
@@ -61,7 +67,13 @@ const categoryMenu = ref([
   },
   {
     id: 5,
-    name: '茶具全系列'
+    name: '台灣綠茶系列'
   }
 ])
+
+onMounted(() => {
+  if (!getProducts().length) {
+    getProducts()
+  }
+})
 </script>

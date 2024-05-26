@@ -8,7 +8,7 @@
           <span class="text-3xl font-bold">{{ t('slogan') }}</span>
           <div class="pt-5" v-for="item in bannerList" :key="item.id">
             <el-button
-              class="text-xl bg-main"
+              class="text-xl"
               size="large"
               color="#994e3d"
               :dark="isDark"

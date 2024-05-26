@@ -1,11 +1,12 @@
 <template>
   <div
-    class="flex justify-center items-center h-screen bg-center bg-no-repeat bg-[url('https://i.pinimg.com/564x/1b/fd/3c/1bfd3cda9146c40b5759244349318146.jpg')] bg-cover"
+    class="flex justify-center items-center h-screen bg-center bg-no-repeat bg-[url('https://images.unsplash.com/photo-1521684415672-2306f06332a4?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NzF8fHRlYSUyMGNlcmVtb255fGVufDB8MHwwfHx8MA%3D%3D')] bg-cover bg-amber-200 bg-blend-multiply"
   >
     <div
-      class="absolute w-80 box-border shadow-lg shadow-slate-950 p-4 rounded-md border-solid border-2 border-stone-200"
+      class="absolute w-80 box-border shadow-lg shadow-slate-950 p-4 rounded-md border-solid border-2 border-stone-200 text-orange-600"
     >
-      <h1 class="text-center text-2xl text-gray-700 font-semibold pb-2">{{ t('first_login') }}</h1>
+      <h1 class="text-center text-2xl font-semibold pb-2">{{ t('first_login') }}</h1>
+
       <el-form
         ref="formRef"
         style="max-width: 300px"
@@ -16,41 +17,62 @@
         <el-form-item
           label="帳號"
           prop="email"
-          :rules="[{ type: 'email', message: 'Please input correct email address' }]"
+          :rules="[{ type: 'email', message: t('message.account') }]"
         >
           <el-input v-model="validateForm.email" type="text" autocomplete="off" />
         </el-form-item>
-        <el-form-item label="密碼" prop="password" :rules="[]">
+        <el-form-item
+          label="密碼"
+          prop="password"
+          :rules="[{ type: 'password', message: t('message.password') }]"
+        >
           <el-input v-model="validateForm.password" type="password" autocomplete="off" />
         </el-form-item>
-        <div class="button">
-          <el-form-item class="grid justify-items-center">
-            <el-button @click="submitForm(formRef)">{{ t('submit') }}</el-button>
-            <el-button>{{ t('home') }}</el-button>
-          </el-form-item>
-        </div>
+        <el-form-item class="grid justify-items-center">
+          <el-button @click="submitForm(formRef)">{{ t('submit') }}</el-button>
+          <el-button>{{ t('home') }}</el-button>
+        </el-form-item>
       </el-form>
     </div>
   </div>
 </template>
 
   
-  <script setup>
+<script setup>
 import { useI18n } from 'vue-i18n'
 import { reactive, ref } from 'vue'
+import { useUserStore } from '@/stores/user'
+import { userApi } from '@/api/module/user'
+import { setToken } from '@/utils/localStorage'
+import { useRouter } from 'vue-router'
 
 const { t } = useI18n()
+const router = useRouter()
 
 const formRef = ref()
 
 const validateForm = reactive({
-  email: ''
+  email: '',
+  password: ''
 })
+const userStore = useUserStore()
+const login = async () => {
+  const { code, data } = await userApi.login()
+  if (code === 200) {
+    const { token } = data
+    // 更新數據
+    setToken(token)
+  }
+  //重新渲染
+  userStore.setIsLogin(true)
+  router.push('/')
+}
 
 const submitForm = (formEl) => {
   if (!formEl) return
   formEl.validate((valid) => {
     if (valid) {
+      login()
       console.log('submit!')
     } else {
       console.log('error submit!')
@@ -58,11 +80,4 @@ const submitForm = (formEl) => {
     }
   })
 }
-
-const resetForm = (formEl) => {
-  if (!formEl) return
-  formEl.resetFields()
-}
 </script>
-
-  

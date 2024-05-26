@@ -21,8 +21,9 @@ import BannerDiscount from './BannerDiscount.vue'
 import TeaSearchBtn from '@/components/TeaSearchBtn/index.vue'
 import TeaIntroCard from '@/components/TeaIntroCard/index.vue'
 import TeaCarousel from '@/components/TeaCarousel/index.vue'
+import { ref } from 'vue'
 
-const TeaIntroCardList = [
+const TeaIntroCardList = ref([
   {
     image:
       'https://images.unsplash.com/photo-1635756227689-01eda5140530?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHRlYSUyMGdhcmRlbnxlbnwwfHwwfHx8MA%3D%3D',
@@ -40,5 +41,5 @@ const TeaIntroCardList = [
     page: '/about',
     isReverse: true
   }
-]
+])
 </script>

@@ -4,7 +4,9 @@
   "first_login": "Please Login",
   "message": {
     "login_success": "Login successfully",
-    "login_fail": "Login fail"
+    "login_fail": "Login fail",
+    "account": "Please input correct email address.",
+    "password": "Please input correct password."
   },
   "return_home": "Home",
   "submit": "Submit",
@@ -14,5 +16,15 @@
   "shop_name": "ChinJi Tea Shop",
   "search_tea": "Search Tea",
   "slogan": "Classic tea flavor, ChinJi’s first choice.",
-  "click": "Click me"
+  "click": "Click me",
+  "add_cart": "Add To Cart",
+  "clear_cart": "Clear Shopping Cart",
+  "go_checkout": "Checkout",
+  "cart": "Shopping Cart",
+  "go_shopping": "Go Shopping",
+  "all_product": "All Products",
+  "no_product": "No Product",
+  "total": "Total",
+  "order_content": "Order Content",
+  "receipt_info": "Your Receipt Information"
 }
