@@ -13,5 +13,15 @@ export const setProducts = (products) => {
 }
 
 export const getProducts = () => {
-    return localStorage.getItem('Tea-Products') || []
+    return JSON.parse(localStorage.getItem('Tea-Products')) || []
+}
+
+export const setCart = (products) => {
+    localStorage.setItem('Tea-Cart', JSON.stringify(products))
+}
+export const getCart = () => {
+    return JSON.parse(localStorage.getItem('Tea-Cart')) || []
+}
+export const removeCart = () => {
+    localStorage.removeItem('Tea-Cart')
 }

@@ -4,7 +4,12 @@
       <el-col :span="4">
         <h5 class="my-2 absolute top-0">產品分類</h5>
         <el-menu class="el-menu-vertical-demo absolute top-10">
-          <el-menu-item v-for="item in categoryMenu" :key="item.id" :index="id">
+          <el-menu-item
+            v-for="item in categoryMenu"
+            :key="item.id"
+            :index="id"
+            @click="categoryClick(item.name)"
+          >
             <span>{{ item.name }}</span>
           </el-menu-item>
         </el-menu>
@@ -12,7 +17,9 @@
       <el-col :span="20">
         <el-row>
           <tea-product-card
-            v-for="item in cards"
+            @card-click="goToProduct(item.id)"
+            @add-click="addToCard(item.id)"
+            v-for="item in teaCards"
             :key="item.id"
             :image="item.image"
             :name="item.name"
@@ -25,27 +32,83 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref, inject } from 'vue'
 import { useRouter } from 'vue-router'
 import TeaProductCard from '@/components/TeaProductCard/index.vue'
-import { productApi } from '@/api/module/product'
-import { setProducts } from '@/utils/localStorage'
+import { getProducts, setCart, getCart } from '@/utils/localStorage'
+import { ElMessage } from 'element-plus'
+import { useCartStore } from '@/stores/cart'
+import { useI18n } from 'vue-i18n'
 
-const cards = ref([])
+const { t } = useI18n()
+const { cards } = inject('data')
+const teaCards = ref(cards)
+const cartStore = useCartStore()
 
-const getProducts = async () => {
-  const { code, data } = await productApi.getProducts()
-  if (code === 200) {
-    // 渲染畫面
-    cards.value = data
-    // 儲存資料
-    setProducts(data)
+const categoryClick = (category) => {
+  if (category === '全部') {
+    teaCards.value = getProducts()
+    return
   }
+  teaCards.value = getProducts().filter((card) => card.category === category)
 }
 
 const router = useRouter()
 const goToProduct = (id) => {
   router.push(`/productDetail/${id}`)
+}
+const addToCard = (id) => {
+  const allProduct = getProducts()
+  const product = allProduct.find((product) => product.id === id)
+  const cart = getCart()
+  if (!cart.length) {
+    // 購物車為空
+    setCart([
+      {
+        ...product,
+        quantity: 1
+      }
+    ])
+    cartStore.setToCart([
+      {
+        ...product,
+        quantity: 1
+      }
+    ])
+    return
+  }
+  if (cart.some((product) => product.id === id)) {
+    // 如果cart有此商品
+    const newCart = cart.map((product) => {
+      if (product.id === id) {
+        product.quantity += 1
+        return product
+      }
+      return product
+    })
+    setCart([...newCart])
+    cartStore.setToCart([...newCart])
+  } else {
+    // 沒有此商品
+    setCart([
+      ...cart,
+      {
+        ...product,
+        quantity: 1
+      }
+    ])
+    cartStore.setToCart([
+      ...cart,
+      {
+        ...product,
+        quantity: 1
+      }
+    ])
+  }
+  ElMessage({
+    message: t('add_to_cart'),
+    type: 'success'
+  })
 }
 
 const categoryMenu = ref([
@@ -70,10 +133,4 @@ const categoryMenu = ref([
     name: '台灣綠茶系列'
   }
 ])
-
-onMounted(() => {
-  if (!getProducts().length) {
-    getProducts()
-  }
-})
 </script>

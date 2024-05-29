@@ -2,21 +2,23 @@
   {
     "id": 1,
     "name": "阿里山清香高山茶",
-    "category": "阿里山系列",
+    "category": "阿里山茶系列",
     "image": "https://shoplineimg.com/58379d81617069988a982900/5a3cdde09f9a4ffb4e002adb/800x.jpg?",
-    "price": 90
+    "price": 90,
+    "size": "75克",
+    "desc": "台灣的阿里山是讓國人在國際世界上引以自豪的好地方，其高知名度更是不在話下，得天獨厚的自然環境中，使茶葉呈現飽滿厚實的球狀顆粒，其葉片渾厚、葉嫩，如同珍珠中的珍珠，茶園大都集中在阿里山鄉西南方交界處，平均日照短晝夜溫差大，新葉成長緩慢，葉片豐潤渾厚、果膠質含量高，茶區的氣候使茶帶有淡淡的花果香頗具特色。"
   },
   {
     "id": 2,
     "name": "阿里山烏龍茶",
-    "category": "阿里山系列",
+    "category": "阿里山茶系列",
     "image": "https://rs.joo.com.tw/website/uploads_product/website_656/P0065600063321_3_1050439.jpg?_47132",
     "price": 240
   },
   {
     "id": 3,
     "name": "阿里山奶香金萱茶",
-    "category": "阿里山系列",
+    "category": "阿里山茶系列",
     "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcR-B9bx-WqwU2nj-6NxfjlsX8NIqF-zm_-e_YLzPC3cw6zHcCR8e-kGxKm5ripNXuvOyvPwiBJQUpEKPb5nmS3_fZWSmCK_XSSyWMvy6H24Yf8aMxSNvQp5TO7krA&usqp=CAc",
     "price": 90
   },
@@ -32,7 +34,9 @@
     "name": "日月潭蜜香紅茶",
     "category": "台灣紅茶系列",
     "image": "https://www.howluvly.com/static/ecommerce/229/229807/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/_/-/_-75g_7/www.howluvly.com-T003-BH-L75-31.jpg",
-    "price": 470
+    "price": 470,
+    "size": "75克",
+    "desc": "蜜香紅茶是臺灣近幾年才創製出來的新優質好茶，這種茶不僅全世界只有臺灣產製，也是茶業改良場歷經多年研發，辛勤與努力開創的結晶，最大特色就是具有淡淡優雅的蜜香風味，這種「蜜香」純粹是天然生成，優雅細膩令人百喝不厭。"
   },
   {
     "id": 6,
@@ -74,7 +78,9 @@
     "name": "台灣龍井茶",
     "category": "台灣綠茶系列",
     "image": "https://down-tw.img.susercontent.com/file/tw-11134207-7r98o-lkyjtvvkbs8pbf_tn.webp",
-    "price": 350
+    "price": 600,
+    "size": "150克",
+    "desc": "「龍井茶」茶菁以「鮮綠」、「營養價值高」之生長樣態為採收標準，近年來農業從業人口老化趨勢，初階進行研發投入「省工採收茶機」，可節省人力50%以上，採收時利用鼓風將茶菁直接放置後方平台，以利搬運。在茶菁鮮葉上，水分佔有80%左右，在烘乾調製過程中，顧及「龍井茶」之「澀、香、味」，烘乾過程需以低溫處理為主，才可保留「易揮發香氣元素」，讓「龍井茶」更貼近大自然風味。"
   },
   {
     "id": 12,

@@ -1,6 +1,6 @@
 <template>
-  <el-card :body-style="{ padding: '10px' }" shadow="hover" class="m-3" @click="cardClick">
-    <img :src="image" class="object-cover h-96 md:h-auto md:w-48" />
+  <el-card :body-style="{ padding: '10px' }" shadow="hover" class="m-3">
+    <img @click="cardClick" :src="image" class="object-cover h-96 md:h-auto md:w-48" />
     <div class="text-center text-main text-lg font-semibold py-2">{{ name }}</div>
     <el-row class="justify-between pt-2 font-semibold text-lg"
       >NT${{ price }}

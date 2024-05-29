@@ -54,14 +54,6 @@ export const frontRoutes = [
                 }
             },
             {
-                path: '/cart',
-                name: 'cart',
-                component: () => import('@/views/Cart/index.vue'),
-                meta: {
-                    title: '購物車'
-                }
-            },
-            {
                 path: 'checkout',
                 name: 'checkout',
                 component: () => import('@/views/Checkout/index.vue'),
