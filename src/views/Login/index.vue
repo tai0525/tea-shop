@@ -45,6 +45,7 @@ import { useUserStore } from '@/stores/user'
 import { userApi } from '@/api/module/user'
 import { setToken } from '@/utils/localStorage'
 import { useRouter } from 'vue-router'
+import { ElMessage } from 'element-plus'
 
 const { t } = useI18n()
 const router = useRouter()
@@ -74,8 +75,16 @@ const submitForm = (formEl) => {
     if (valid) {
       login()
       console.log('submit!')
+      ElMessage({
+        message: t('message.login_success'),
+        type: 'success'
+      })
     } else {
       console.log('error submit!')
+      ElMessage({
+        message: t('message.login_fail'),
+        type: 'error'
+      })
       return false
     }
   })

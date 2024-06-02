@@ -26,44 +26,42 @@
       </el-select>
     </el-form-item>
     <el-form-item label="備註" prop="message">
-      <el-input type="textarea" v-model="ruleForm.message" :rows="2"></el-input>
+      <el-input type="textarea" v-model="ruleForm.message" :rows="5"></el-input>
     </el-form-item>
   </el-form>
 </template>
 
 <script setup>
+import { reactive } from 'vue'
+import { useI18n } from 'vue-i18n'
+const { t } = useI18n()
+
+const ruleForm = reactive({
+  email: '',
+  name: '',
+  phone: '',
+  address: '',
+  pay: '',
+  message: ''
+})
 // 填寫訂單
-export default {
-  data() {
-    return {
-      ruleForm: {
-        email: '',
-        name: '',
-        phone: '',
-        address: '',
-        pay: '',
-        message: ''
-      },
-      rules: {
-        email: [
-          { required: true, message: '請輸入e-mail', trigger: 'blur' },
-          { type: 'email', message: '請輸入正確的e-mail', trigger: ['blur', 'change'] }
-        ],
-        name: [
-          { required: true, message: '請輸入姓名', trigger: 'blur' },
-          { min: 3, max: 5, message: '長度在3到5個字', trigger: 'blur' }
-        ],
-        phone: [
-          { required: true, message: '請輸入電話', trigger: 'blur' },
-          { max: 10, message: '長度不能超過10碼', trigger: 'blur' }
-        ],
-        address: [
-          { required: true, message: '請輸入地址', trigger: 'blur' },
-          { message: '請輸入正確的地址', trigger: 'blur' }
-        ],
-        pay: [{ required: true, message: '付款方式為必填', trigger: 'change' }]
-      }
-    }
-  }
+const rules = {
+  email: [
+    { required: true, message: t('form.email'), trigger: 'blur' },
+    { type: 'email', message: t('form.correct_email'), trigger: ['blur', 'change'] }
+  ],
+  name: [
+    { required: true, message: t('form.name'), trigger: 'blur' },
+    { min: 3, max: 5, message: t('form.name_length'), trigger: 'blur' }
+  ],
+  phone: [
+    { required: true, message: t('form.phone'), trigger: 'blur' },
+    { max: 10, message: t('form.correct_length'), trigger: 'blur' }
+  ],
+  address: [
+    { required: true, message: t('form.address'), trigger: 'blur' },
+    { message: t('form.correct_address'), trigger: 'blur' }
+  ],
+  pay: [{ required: true, message: t('form.pay'), trigger: 'blur' }]
 }
 </script>

@@ -1,9 +1,10 @@
 {
   "login": "Log in",
-  "loginout": "Log out",
+  "logout": "Log out",
   "first_login": "Please Login",
   "message": {
     "login_success": "Login successfully",
+    "logout_success": "Logout successfully",
     "login_fail": "Login fail",
     "account": "Please input correct email address.",
     "password": "Please input correct password."
@@ -28,5 +29,27 @@
   "no_product": "No Product",
   "total": "Total",
   "order_content": "Order Content",
-  "receipt_info": "Your Receipt Information"
+  "receipt_info": "Your Receipt Information",
+  "product_info": "Product Information",
+  "material_tea": "Material: Tea",
+  "origin_tw": "Origin: Taiwan",
+  "exp_date": "Expiration Date: Two Years",
+  "storage_method": "Storage method: Please store in dry place, avoid direct sunlight, and drink as soon as possible after opening.",
+  "make_tea": {
+    "tips": "Tips for making tea",
+    "boiling": "Boiling water 100 degrees.",
+    "pot_body": "The amount of tea is about 1/2~2/3 of the pot body.",
+    "rush": "The first rush is 30 seconds, the second rush is 20 seconds, and the third rush is 40 seconds."
+  },
+  "form": {
+    "email": "Please enter your email address",
+    "correct_email": "Please enter correct email address",
+    "name": "Please enter your name",
+    "name_length": "Between 3 and 5 words in length",
+    "phone": "Please enter your phone number",
+    "correct_length": "Length cannot exceed 10 yards",
+    "address": "Please enter your address",
+    "correct_address": "Please enter correct address",
+    "pay": "Payment method is required"
+  }
 }

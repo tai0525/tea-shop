@@ -48,12 +48,15 @@
   </div>
 </template>
 <script setup>
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 import TeaOrderContent from '@/components/TeaOrderContent/index.vue'
 import TeaOrderForm from '@/components/TeaOrderForm/index.vue'
 import TeaOrderInfo from '@/components/TeaOrderInfo/index.vue'
+import { useCartStore } from '@/stores/cart'
 
+const cartStore = useCartStore()
+const cart = computed(() => cartStore.cart)
 const { t } = useI18n()
 const step = ref(1)
 const next = () => {

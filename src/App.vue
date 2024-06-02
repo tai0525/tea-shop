@@ -6,10 +6,8 @@ import { useCartStore } from './stores/cart'
 
 const cartStore = useCartStore()
 const cards = ref([])
-const cart = ref(getCart() || [])
 const removeFromCart = (id) => {
   const newCart = getCart().filter((product) => product.id !== id)
-  cart.value = newCart
   setCart([...newCart])
   cartStore.setToCart([...newCart])
 }
@@ -23,7 +21,7 @@ const getProducts = async () => {
     setProducts(data)
   }
 }
-provide('data', { cards, cart, removeFromCart })
+provide('data', { cards, removeFromCart })
 
 onMounted(() => {
   if (!getProducts().length) {
@@ -35,5 +33,3 @@ onMounted(() => {
 <template>
   <RouterView />
 </template>
-
-<style scoped></style>

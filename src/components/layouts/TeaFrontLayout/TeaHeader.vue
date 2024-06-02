@@ -77,6 +77,7 @@
             size="large"
             color="#994e3d"
             :dark="isDark"
+            @click="changePage('/checkout')"
             >{{ t('go_checkout') }}</el-button
           >
         </div>
@@ -94,6 +95,7 @@ import { removeToken } from '@/utils/localStorage'
 import { useUserStore } from '@/stores/user'
 import { useCartStore } from '@/stores/cart'
 import { CircleClose } from '@element-plus/icons-vue'
+import { ElMessage } from 'element-plus'
 
 const { t } = useI18n()
 const visible = ref(false)
@@ -118,6 +120,10 @@ const totalPrice = computed(() => {
 const logout = () => {
   removeToken()
   userStore.setIsLogin(false)
+  ElMessage({
+    message: t('message.logout_success'),
+    type: 'success'
+  })
 }
 const props = defineProps({
   isLogin: {

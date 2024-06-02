@@ -9,8 +9,12 @@
           </el-breadcrumb-item>
           <el-breadcrumb-item>{{ product.category }}</el-breadcrumb-item>
         </el-breadcrumb>
-        <div class="bg-cover bg-center size-96">
-          <img :src="product.image" :alt="product.name" class="py-5" />
+        <div class="bg-cover bg-center">
+          <img
+            :src="product.image"
+            :alt="product.name"
+            class="py-5 w-[400px] h-[400px] object-cover"
+          />
         </div>
       </el-col>
       <el-col :span="12">
@@ -28,10 +32,12 @@
       </el-col>
     </el-row>
   </div>
+  <tea-product-info class="mt-6" />
 </template>
 
 <script setup>
 import { useRoute } from 'vue-router'
+import TeaProductInfo from '@/components/TeaProductInfo/index.vue'
 import { ref, inject, computed, defineEmits } from 'vue'
 import { useI18n } from 'vue-i18n'
 
@@ -44,6 +50,7 @@ const product = computed(() => {
   return cards.value.find((card) => card.id === Number(routeId.value))
 })
 const num = ref(1)
+
 const emit = defineEmits(['addClick'])
 const addToCart = () => {
   emit('addClick')

@@ -13,21 +13,27 @@
     "name": "阿里山烏龍茶",
     "category": "阿里山茶系列",
     "image": "https://rs.joo.com.tw/website/uploads_product/website_656/P0065600063321_3_1050439.jpg?_47132",
-    "price": 240
+    "price": 240,
+    "size": "75克",
+    "desc": "阿里山烏龍茶是選用台灣阿里山樟樹湖茶區海拔高度1500公尺之精選茶園所摘採的最頂級茶葉所製成，此區千峰萬巒，山明水秀，氣候涼爽，由於氣溫與高度適宜，經年雲霧繚繞滋潤，濕度及日照等絕佳自然條件，使得新葉成長緩慢，生長期長，山泉水灌溉，葉片豐潤渾厚、果膠質含量高，孕育出了阿里山茶特有的山頭香氣。"
   },
   {
     "id": 3,
     "name": "阿里山奶香金萱茶",
     "category": "阿里山茶系列",
-    "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcR-B9bx-WqwU2nj-6NxfjlsX8NIqF-zm_-e_YLzPC3cw6zHcCR8e-kGxKm5ripNXuvOyvPwiBJQUpEKPb5nmS3_fZWSmCK_XSSyWMvy6H24Yf8aMxSNvQp5TO7krA&usqp=CAc",
-    "price": 90
+    "image": "https://cdn.cybassets.com/media/W1siZiIsIjE2NDA2L3Byb2R1Y3RzLzMzNzQ4MzAyLzE2MjI4ODA1ODNfMDBiYmY3ZTViMWE2MWE5MWFlYmQuanBlZyJdLFsicCIsInRodW1iIiwiMTAyNHgxMDI0Il1d.jpeg?sha=a13255a7964e824b",
+    "price": 90,
+    "size": "75克",
+    "desc": "台灣茶葉改良場經過四十多年的培育，1980年代成功培育排列第十二號的新品種，命名台茶十二號，其後又命名為「金萱」。茶葉面較為肥厚、鮮嫩，茶葉色澤翠綠有光澤，滋味清純滑潤，帶有淡淡天然奶香及花香，風味獨特，深受女性及年輕消費者喜愛。"
   },
   {
     "id": 4,
     "name": "日月潭紅玉紅茶",
     "category": "台灣紅茶系列",
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVNOPuKqhP9snioGRUSOI-MbUzNJ05hw19mr-cMu5BIg&s",
-    "price": 450
+    "price": 450,
+    "size": "75克",
+    "desc": "紅玉紅茶又名臺茶18號，是茶業改良場以台灣山茶與緬甸大葉種選育，歷經五十餘年育種試驗，於2000年推出所選育適作紅茶之優良品種，茶湯水色艷紅帶有黃金環圈感，散發出淡淡薄荷及肉桂香，滋味醇厚，茶多酚含量高，經全發酵後轉化成茶紅質，此品種迷人之香氣及滋味，即源自於原生種台灣山茶之特殊，曾被紅茶專家讚譽為「台灣紅」「台灣香」，足可代表台灣紅茶與眾多世界知名紅茶爭鋒，是極為獨特之品種。"
   },
   {
     "id": 5,
@@ -43,35 +49,45 @@
     "name": "梨山紅韻",
     "category": "台灣紅茶系列",
     "image": "https://taiwanleaftea.com/image/cache/catalog/Goods/KL/Li-Shan-Hongyun-Black-Tea-1-798x798.jpg",
-    "price": 450
+    "price": 450,
+    "size": "75克",
+    "desc": "茶改場新改良品種「台茶 21 號 – 紅韻」由祈門茶種與印度大葉種 Kyang 所配種而來。 果香奔騰，擁有濃厚花果香氣，是少數全發酵茶中具花香的紅茶。極具特色。 大葉種紅茶收斂性強，純飲極佳，即使冷泡或加牛奶或果汁調味，也不易掩蓋其茶味。"
   },
   {
     "id": 7,
     "name": "凍頂烏龍茶",
     "category": "凍頂烏龍茶系列",
     "image": "https://www.teasney.com/wp-content/uploads/gaba-8.jpg",
-    "price": 280
+    "price": 300,
+    "size": "150克",
+    "desc": "凍頂烏龍茶的典型特徵包括口感醇厚、耐泡，以及持久濃郁的回甘。這款茶的發酵度約為30%，經過30小時以上的反覆烘焙，焙火香味得以保留。茶湯口感甘純而有力，回甘層次豐富。焙火茶具有暖胃的效果，特別適合不常喝茶的茶友們品味。"
   },
   {
     "id": 8,
     "name": "頂級凍頂烏龍茶",
     "category": "凍頂烏龍茶系列",
-    "image": "https://www.tea24h.com/upload/images/%E7%B4%85%E7%83%8F%E9%BE%8D%E8%8C%B6/%E7%B4%85%E7%83%8F%E9%BE%8D%E8%8C%B6-01.jpg",
-    "price": 500
+    "image": "https://down-tw.img.susercontent.com/file/tw-11134207-7r990-lnwrae0iboe126",
+    "price": 500,
+    "size": "100克",
+    "desc": "產於台灣南投縣鹿谷鄉凍頂茶區，海拔800公尺，品質特級之春冬茶。凍頂山茶區土壤肥沃、排水性佳、氣候適宜，茶樹生長條件良好。凍頂烏龍茶製作過程繁複，所採茶菁以珍貴龍眼木碳烘焙，遵循古法製作，極為耗時費神，所製作出的茶葉外觀緊結成半球型，色澤墨綠、香氣濃郁、滋味飽滿渾厚，茶湯呈琥珀色， 回甘細緻，口感甘醇，飲用後口齒留香，是香氣與滋味並重的台灣名茶，讓人念念不忘。"
   },
   {
     "id": 9,
     "name": "炭焙凍頂烏龍茶",
     "category": "凍頂烏龍茶系列",
-    "image": "https://down-tw.img.susercontent.com/file/tw-11134207-7r990-lnwrae0iboe126",
-    "price": 280
+    "image": "https://www.tea24h.com/upload/images/%E7%B4%85%E7%83%8F%E9%BE%8D%E8%8C%B6/%E7%B4%85%E7%83%8F%E9%BE%8D%E8%8C%B6-01.jpg",
+    "price": 280,
+    "size": "100克",
+    "desc": "古法炭焙聽來浪漫，卻是考驗意志力的真功夫：純用龍眼木、相思木的溫文炭火在最後一道製程完美收尾，每隔二十分鐘左右就得起身翻動茶葉，趕工時節焙茶到深夜、值夜哨般不成眠 —— 炭火裡的遠紅外線熱輻射，均勻造就了極致香甜的梅納反應，深邃地讓一股不慍不燥的焦香鑽進緊實褐色的茶葉裡。"
   },
   {
     "id": 10,
     "name": "台灣碧螺春",
     "category": "台灣綠茶系列",
     "image": "https://down-tw.img.susercontent.com/file/tw-11134207-23030-dm93tg5h8dovc7",
-    "price": 300
+    "price": 400,
+    "size": "50克",
+    "desc": "在冬末春初時節，茶農會以人工採摘一心二葉之茶葉嫩芽，來製作碧螺春綠茶，採摘下來的嫩葉不經發酵直接進行殺菁、揉捻和乾燥，製成外觀新鮮碧綠，嫩芽牙尖有白毫，形狀細長並彎曲似螺旋形狀的「碧螺春」，熱泡如綠豆清香，冷泡如牧草芬芳，鮮活爽口又保健。"
   },
   {
     "id": 11,
@@ -87,6 +103,8 @@
     "name": "八川綠茶",
     "category": "台灣綠茶系列",
     "image": "https://img.shoplineapp.com/media/image_clips/65faaa03401dd500208fa248/original.jpg?1710926339",
-    "price": 500
+    "price": 500,
+    "size": "150克",
+    "desc": "台灣綠茶八川綠茶屬於翡翠級綠茶，不同於台灣綠茶碧螺春其風味甘醇清香！頂級綠茶搭配茉莉花燻製，極緻好喝，喝得出的台灣綠茶全新的口感及特殊的風味。"
   }
 ]
