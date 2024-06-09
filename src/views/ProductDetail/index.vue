@@ -24,8 +24,8 @@
         <p class="text-lg pt-5">{{ product.desc }}</p>
         <p class="text-2xl font-semibold text-main py-5">售價 NT$: {{ product.price }}</p>
         <div class="flex justify-between">
-          <el-input-number v-model="num" size="large" :min="1" :max="30" />
-          <el-button class="" color="#994e3d" :dark="isDark" @click="addToCart">{{
+          <el-input-number v-model="quantity" size="large" :min="1" :max="30" />
+          <el-button class="" color="#994e3d" :dark="isDark" @click="addToCart(routeId)">{{
             t('add_cart')
           }}</el-button>
         </div>
@@ -38,21 +38,58 @@
 <script setup>
 import { useRoute } from 'vue-router'
 import TeaProductInfo from '@/components/TeaProductInfo/index.vue'
-import { ref, inject, computed, defineEmits } from 'vue'
+import { ref, inject, computed } from 'vue'
 import { useI18n } from 'vue-i18n'
+import { setCart } from '@/utils/localStorage'
+import { useCartStore } from '@/stores/cart'
+import { ElMessage } from 'element-plus'
 
 const { t } = useI18n()
-const { cards } = inject('data')
+const { products } = inject('data')
+const cartStore = useCartStore()
 
 const route = useRoute()
 const routeId = ref(Number(route.params.id))
 const product = computed(() => {
-  return cards.value.find((card) => card.id === Number(routeId.value))
+  return products.value.find((card) => card.id === Number(routeId.value))
 })
-const num = ref(1)
+const quantity = computed(() => {
+  const product = cartStore.cart.find((product) => product.id === routeId.value)
+  return product.quantity
+})
 
-const emit = defineEmits(['addClick'])
-const addToCart = () => {
-  emit('addClick')
+const addToCart = (id) => {
+  const product = products.value.find((product) => product.id === id)
+  const cart = cartStore.cart
+  const newProduct = {
+    ...product,
+    quantity: quantity.value
+  }
+  if (!cart.length) {
+    // 購物車為空
+    setCart([newProduct])
+    cartStore.setToCart([newProduct])
+    return
+  }
+  if (cart.some((product) => product.id === id)) {
+    // 如果cart有此商品
+    const newCart = cart.map((product) => {
+      if (product.id === id) {
+        product.quantity = quantity.value
+        return product
+      }
+      return product
+    })
+    setCart([...newCart])
+    cartStore.setToCart([...newCart])
+  } else {
+    // 沒有此商品
+    setCart([...cart, newProduct])
+    cartStore.setToCart([...cart, newProduct])
+  }
+  ElMessage({
+    message: t('add_to_cart'),
+    type: 'success'
+  })
 }
 </script>

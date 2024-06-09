@@ -1,22 +1,16 @@
 <template>
-  <el-form
-    :model="ruleForm"
-    :rules="rules"
-    ref="ruleForm"
-    label-width="100px"
-    class="demo-ruleForm"
-  >
+  <el-form :model="ruleForm" :rules="rules" label-width="100px">
     <el-form-item label="E-mail" prop="email">
-      <el-input v-model="ruleForm.email"></el-input>
+      <el-input v-model="ruleForm.email" />
     </el-form-item>
     <el-form-item label="收件人姓名" prop="name">
-      <el-input v-model="ruleForm.name"></el-input>
+      <el-input v-model="ruleForm.name" />
     </el-form-item>
     <el-form-item label="收件人電話" prop="phone">
-      <el-input v-model="ruleForm.phone"></el-input>
+      <el-input v-model="ruleForm.phone" />
     </el-form-item>
     <el-form-item label="收件人地址" prop="address">
-      <el-input v-model="ruleForm.address"> </el-input>
+      <el-input v-model="ruleForm.address" />
     </el-form-item>
     <el-form-item label="付款方式" prop="pay">
       <el-select v-model="ruleForm.pay" placeholder="請選擇付款方式">
@@ -26,15 +20,18 @@
       </el-select>
     </el-form-item>
     <el-form-item label="備註" prop="message">
-      <el-input type="textarea" v-model="ruleForm.message" :rows="5"></el-input>
+      <el-input type="textarea" v-model="ruleForm.message" :rows="5" />
     </el-form-item>
+    <el-button type="danger" class="absolute right-0" @click="submit">送出訂單</el-button>
   </el-form>
 </template>
 
 <script setup>
-import { reactive } from 'vue'
+import { reactive, defineEmits } from 'vue'
 import { useI18n } from 'vue-i18n'
 const { t } = useI18n()
+
+const emit = defineEmits('submit')
 
 const ruleForm = reactive({
   email: '',
@@ -44,6 +41,9 @@ const ruleForm = reactive({
   pay: '',
   message: ''
 })
+const submit = () => {
+  emit('submit', { ruleForm })
+}
 // 填寫訂單
 const rules = {
   email: [
@@ -52,7 +52,7 @@ const rules = {
   ],
   name: [
     { required: true, message: t('form.name'), trigger: 'blur' },
-    { min: 3, max: 5, message: t('form.name_length'), trigger: 'blur' }
+    { min: 2, max: 5, message: t('form.name_length'), trigger: 'blur' }
   ],
   phone: [
     { required: true, message: t('form.phone'), trigger: 'blur' },

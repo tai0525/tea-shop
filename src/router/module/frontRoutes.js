@@ -1,7 +1,6 @@
 import FrontLayout from '@/components/layouts/TeaFrontLayout/index.vue'
 import Home from '@/views/Home/index.vue'
 // import { useI18n } from 'vue-i18n'
-
 // const { t } = useI18n()
 
 // TODO: 建立前台layout路由 + 之後 children 頁面路徑不要有 '/' + 加上頁面 title

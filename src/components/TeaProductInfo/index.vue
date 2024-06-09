@@ -32,19 +32,19 @@ const { t } = useI18n()
 const infoList = ref([
   {
     id: 1,
-    name: t('material_tea')
+    name: t('tea_info.material_tea')
   },
   {
     id: 2,
-    name: t('origin_tw')
+    name: t('tea_info.origin_tw')
   },
   {
     id: 3,
-    name: t('exp_date')
+    name: t('tea_info.exp_date')
   },
   {
     id: 4,
-    name: t('storage_method')
+    name: t('tea_info.storage_method')
   }
 ])
 const tipsList = ref([

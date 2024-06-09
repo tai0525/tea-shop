@@ -30,7 +30,7 @@
         </el-form-item>
         <el-form-item class="grid justify-items-center">
           <el-button @click="submitForm(formRef)">{{ t('submit') }}</el-button>
-          <el-button>{{ t('home') }}</el-button>
+          <el-button @click="changePage('/')">{{ t('nav.home') }}</el-button>
         </el-form-item>
       </el-form>
     </div>
@@ -67,6 +67,9 @@ const login = async () => {
   //重新渲染
   userStore.setIsLogin(true)
   router.push('/')
+}
+const changePage = (link) => {
+  router.push(link)
 }
 
 const submitForm = (formEl) => {

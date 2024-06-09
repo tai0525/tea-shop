@@ -5,42 +5,49 @@
         {{ t('receipt_info') }}
       </div>
     </template>
-    <el-table :data="tableData" :show-header="false" height="250" style="width: 100%">
-      <el-table-column width="150" v-for="item in head" :key="item.id" :index="id">
-        <span>{{ item.name }}</span>
-      </el-table-column>
-    </el-table>
+    <el-descriptions direction="vertical">
+      <el-descriptions-item :label="t('info.email')">{{ info.email }}</el-descriptions-item>
+      <el-descriptions-item :label="t('info.name')">{{ info.name }}</el-descriptions-item>
+      <el-descriptions-item :label="t('info.phone')">{{ info.phone }}</el-descriptions-item>
+      <el-descriptions-item :label="t('info.address')">{{ info.address }}</el-descriptions-item>
+      <el-descriptions-item :label="t('info.pay')">{{ info.pay }}</el-descriptions-item>
+      <el-descriptions-item :label="t('info.note')">{{ info.note }}</el-descriptions-item>
+    </el-descriptions>
     <template #footer>
-      <el-button type="danger" @click="next">確認付款</el-button>
+      <el-button type="danger" @click="previous">上一步</el-button>
+      <el-button type="danger" @click="changePage('/orderfinish')">確認付款</el-button>
     </template>
   </el-card>
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { defineProps, defineEmits, reactive } from 'vue'
 import { useI18n } from 'vue-i18n'
+import { useRouter } from 'vue-router'
 
 const { t } = useI18n()
 
-const head = ref([
-  {
-    id: 1,
-    name: '訂單時間'
-  },
-  {
-    id: 2,
-    name: '數量'
-  },
-  {
-    id: 3,
-    name: '價格'
+const emit = defineEmits(['previous'])
+const previous = () => {
+  emit('previous')
+}
+const props = defineProps({
+  data: {
+    type: Object,
+    default: () => {}
   }
-])
-const tableData = [
-  {
-    name: '八川綠茶',
-    qty: '1',
-    price: '500'
-  }
-]
+})
+const router = useRouter()
+const changePage = (link) => {
+  router.push(link)
+}
+
+const info = reactive({
+  name: props.data?.name || '',
+  email: props.data?.email || '',
+  phone: props.data?.phone || '',
+  address: props.data?.address || '',
+  pay: props.data?.pay || '',
+  note: props.data?.note || ''
+})
 </script>

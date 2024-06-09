@@ -1,5 +1,6 @@
 <template>
   <tea-back-header />
+  <router-view />
 </template>
 
 <script setup>

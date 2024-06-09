@@ -2,7 +2,9 @@
   <div>
     <nav class="p-5 md:flex md:items-center md:justify-between">
       <div @click="changePage('/')" class="flex justify-between items-center cursor-pointer">
-        <el-icon class="icetea" :size="30" color="#000"><IceTea /></el-icon>
+        <el-icon class="icetea" :size="30" color="#000">
+          <IceTea />
+        </el-icon>
         <h1 class="px-1 text-2xl font-bold">{{ t('chinji') }}</h1>
       </div>
 
@@ -28,24 +30,23 @@
     <template #header="{ close, titleId, titleClass }">
       <h4 :id="titleId" :class="titleClass" class="font-bold text-2xl">{{ t('cart') }}</h4>
       <el-button @click="close">
-        <el-icon class="el-icon--left text-main"><CircleClose /></el-icon>
+        <el-icon class="el-icon--left text-main">
+          <CircleClose />
+        </el-icon>
       </el-button>
     </template>
     <div class="text-end">
-      <el-button class="text-main border-main"> {{ t('clear_cart') }} </el-button>
+      <el-button @click="clearCart()" class="text-main border-main">
+        {{ t('clear_cart') }}
+      </el-button>
     </div>
     <div class="relative h-75">
       <!-- 購物車無商品 -->
       <div v-if="!cart.length" class="text-center absolute top-10 start-28">
         <p class="my-10 font-bold text-2xl">{{ t('no_product') }}</p>
-        <el-button
-          class="text-xl"
-          size="large"
-          color="#994e3d"
-          :dark="isDark"
-          @click="changePage('/products')"
-          >{{ t('go_shopping') }}</el-button
-        >
+        <el-button class="text-xl" size="large" color="#994e3d" :dark="isDark" @click="products">{{
+          t('go_shopping')
+        }}</el-button>
       </div>
       <!-- 購物車有商品 -->
       <div v-else>
@@ -64,9 +65,9 @@
                 <span>{{ product.quantity }} x</span>
                 <span>NT$ {{ product.price }}</span>
               </div>
-              <el-icon @click="removeFromCart(product.id)" class="cursor-pointer" :size="25"
-                ><Delete
-              /></el-icon>
+              <el-icon @click="removeFromCart(product.id)" class="cursor-pointer" :size="25">
+                <Delete />
+              </el-icon>
             </div>
           </li>
         </ul>
@@ -77,7 +78,7 @@
             size="large"
             color="#994e3d"
             :dark="isDark"
-            @click="changePage('/checkout')"
+            @click="checkout"
             >{{ t('go_checkout') }}</el-button
           >
         </div>
@@ -100,6 +101,7 @@ import { ElMessage } from 'element-plus'
 const { t } = useI18n()
 const visible = ref(false)
 const { removeFromCart } = inject('data')
+const { clearCart } = inject('data')
 
 const userStore = useUserStore()
 const cartStore = useCartStore()
@@ -131,6 +133,15 @@ const props = defineProps({
     default: false
   }
 })
+
+const checkout = () => {
+  changePage('/checkout')
+  visible.value = false
+}
+const products = () => {
+  changePage('/products')
+  visible.value = false
+}
 
 // TODO: ref 改成 computed
 const navList = computed(() => [

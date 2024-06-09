@@ -18,7 +18,7 @@
         <el-row>
           <tea-product-card
             @card-click="goToProduct(item.id)"
-            @add-click="addToCard(item.id)"
+            @add-click="addToCart(item.id)"
             v-for="item in teaCards"
             :key="item.id"
             :image="item.image"
@@ -35,14 +35,14 @@
 import { ref, inject } from 'vue'
 import { useRouter } from 'vue-router'
 import TeaProductCard from '@/components/TeaProductCard/index.vue'
-import { getProducts, setCart, getCart } from '@/utils/localStorage'
+import { getProducts, setCart } from '@/utils/localStorage'
 import { ElMessage } from 'element-plus'
 import { useCartStore } from '@/stores/cart'
 import { useI18n } from 'vue-i18n'
 
 const { t } = useI18n()
-const { cards } = inject('data')
-const teaCards = ref(cards)
+const { products } = inject('data')
+const teaCards = ref(products)
 const cartStore = useCartStore()
 
 const categoryClick = (category) => {
@@ -57,10 +57,9 @@ const router = useRouter()
 const goToProduct = (id) => {
   router.push(`/productDetail/${id}`)
 }
-const addToCard = (id) => {
-  const allProduct = getProducts()
-  const product = allProduct.find((product) => product.id === id)
-  const cart = getCart()
+const addToCart = (id) => {
+  const product = products.value.find((product) => product.id === id)
+  const cart = cartStore.cart
   if (!cart.length) {
     // 購物車為空
     setCart([

@@ -1,7 +1,7 @@
 <template>
   <div class="bg-secondary">
     <div class="container py-3">
-      <h1 class="text-center text-3xl pb-3">{{ t('about_us') }}</h1>
+      <h1 class="text-center text-3xl pb-3">{{ t('nav.about_us') }}</h1>
       <div class="row-auto justify-center">
         <div class="flex justify-center items-center md:cols-12 lg:cols-6">
           <img

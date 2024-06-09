@@ -9,10 +9,12 @@
     "account": "Please input correct email address.",
     "password": "Please input correct password."
   },
-  "return_home": "Home",
+  "nav": {
+    "home": "Home",
+    "about": "About Us",
+    "tea_knowledge": "Tea Knowledge"
+  },
   "submit": "Submit",
-  "about": "About Us",
-  "tea_knowledge": "Tea Knowledge",
   "contact": "Contact Us",
   "contact_content": "If you have any questions, please contact us.",
   "shop_name": "ChinJi Tea Shop",
@@ -31,6 +33,7 @@
   "order_content": "Order Content",
   "receipt_info": "Your Receipt Information",
   "product_info": "Product Information",
+  "product_id": "id",
   "material_tea": "Material: Tea",
   "origin_tw": "Origin: Taiwan",
   "exp_date": "Expiration Date: Two Years",
@@ -45,11 +48,28 @@
     "email": "Please enter your email address",
     "correct_email": "Please enter correct email address",
     "name": "Please enter your name",
-    "name_length": "Between 3 and 5 words in length",
+    "name_length": "Between 2 and 5 words in length",
     "phone": "Please enter your phone number",
     "correct_length": "Length cannot exceed 10 yards",
     "address": "Please enter your address",
     "correct_address": "Please enter correct address",
     "pay": "Payment method is required"
+  },
+  "info": {
+    "email": "E-mail",
+    "name": "Recipient Name",
+    "phone": "Recipient Phone",
+    "address": "Recipient Address",
+    "pay": "Payment Method",
+    "note": "Note"
+  },
+  "back": {
+    "products": "Product Management",
+    "orders": "Order Management",
+    "sales": "Sales Volume",
+    "new_product": "Build new product",
+    "add_product": "Add new product",
+    "confirm": "Confirm",
+    "cancel": "Cancel"
   }
 }
