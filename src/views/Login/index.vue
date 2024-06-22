@@ -5,7 +5,7 @@
     <div
       class="absolute w-80 box-border shadow-lg shadow-slate-950 p-4 rounded-md border-solid border-2 border-stone-200 text-orange-600"
     >
-      <h1 class="text-center text-2xl font-semibold pb-2">{{ t('first_login') }}</h1>
+      <h1 class="text-center text-2xl font-semibold pb-2">{{ t('login.first_login') }}</h1>
 
       <el-form
         ref="formRef"
@@ -15,16 +15,18 @@
         class="demo-ruleForm"
       >
         <el-form-item
-          label="帳號"
+          :label="t('login.account')"
           prop="email"
-          :rules="[{ type: 'email', message: t('message.account') }]"
+          :rules="[
+            { type: 'email', required: true, message: t('message.input_account'), trigger: 'blur' }
+          ]"
         >
           <el-input v-model="validateForm.email" type="text" autocomplete="off" />
         </el-form-item>
         <el-form-item
-          label="密碼"
+          :label="t('login.password')"
           prop="password"
-          :rules="[{ type: 'password', message: t('message.password') }]"
+          :rules="[{ required: true, message: t('message.input_password'), trigger: 'blur' }]"
         >
           <el-input v-model="validateForm.password" type="password" autocomplete="off" />
         </el-form-item>
@@ -50,13 +52,14 @@ import { ElMessage } from 'element-plus'
 const { t } = useI18n()
 const router = useRouter()
 
-const formRef = ref()
+const formRef = ref(null)
 
 const validateForm = reactive({
   email: '',
   password: ''
 })
 const userStore = useUserStore()
+
 const login = async () => {
   const { code, data } = await userApi.login()
   if (code === 200) {

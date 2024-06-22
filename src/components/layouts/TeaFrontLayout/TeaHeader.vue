@@ -2,7 +2,7 @@
   <div>
     <nav class="p-5 md:flex md:items-center md:justify-between">
       <div @click="changePage('/')" class="flex justify-between items-center cursor-pointer">
-        <el-icon class="icetea" :size="30" color="#000">
+        <el-icon :size="30" color="#000">
           <IceTea />
         </el-icon>
         <h1 class="px-1 text-2xl font-bold">{{ t('chinji') }}</h1>
@@ -19,7 +19,7 @@
             class="text-xl"
             v-else
             link
-            @click="isLogin ? logout() : changePage(item.link)"
+            @click="item.title === t('login.logout') ? logout() : changePage(item.link)"
             >{{ item.title }}</el-button
           >
         </li>
@@ -147,12 +147,12 @@ const products = () => {
 const navList = computed(() => [
   {
     id: 1,
-    title: t('about_us'),
+    title: t('nav.about_us'),
     link: '/about'
   },
   {
     id: 2,
-    title: t('tea_knowledge'),
+    title: t('nav.tea_knowledge'),
     link: '/knowledge'
   },
   {
@@ -167,7 +167,7 @@ const navList = computed(() => [
   },
   {
     id: 5,
-    title: props.isLogin ? '登出' : '登入',
+    title: props.isLogin ? t('login.logout') : t('login.login'),
     link: props.isLogin ? '' : '/login'
   }
 ])

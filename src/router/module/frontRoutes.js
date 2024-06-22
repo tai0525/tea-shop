@@ -46,7 +46,7 @@ export const frontRoutes = [
             },
             {
                 path: 'productDetail/:id',
-                name: 'productDetail',
+                name: 'ProductDetail',
                 component: () => import('@/views/ProductDetail/index.vue'),
                 meta: {
                     title: '商品詳細頁'
@@ -54,12 +54,28 @@ export const frontRoutes = [
             },
             {
                 path: 'checkout',
-                name: 'checkout',
+                name: 'Checkout',
                 component: () => import('@/views/Checkout/index.vue'),
                 meta: {
                     title: '結帳頁'
                 }
             },
+            {
+                path: 'orderfinish',
+                name: 'OrderFinish',
+                component: () => import('@/views/OrderFinish/index.vue'),
+                meta: {
+                    title: '結帳完成頁'
+                }
+            },
+            {
+                path: '/:pathMatch(.*)*',
+                name: 'Frontnotfound',
+                component: () => import('@/views/FrontNotFound/index.vue'),
+                meta: {
+                    title: '404 Not Found'
+                }
+            }
         ]
     }
 ]

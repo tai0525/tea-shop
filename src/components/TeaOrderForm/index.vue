@@ -19,8 +19,8 @@
         <el-option label="超商取貨付款" value="cvs"></el-option>
       </el-select>
     </el-form-item>
-    <el-form-item label="備註" prop="message">
-      <el-input type="textarea" v-model="ruleForm.message" :rows="5" />
+    <el-form-item label="備註" prop="note">
+      <el-input type="textarea" v-model="ruleForm.note" :rows="5" />
     </el-form-item>
     <el-button type="danger" class="absolute right-0" @click="submit">送出訂單</el-button>
   </el-form>
@@ -39,7 +39,7 @@ const ruleForm = reactive({
   phone: '',
   address: '',
   pay: '',
-  message: ''
+  note: ''
 })
 const submit = () => {
   emit('submit', { ruleForm })
@@ -62,6 +62,7 @@ const rules = {
     { required: true, message: t('form.address'), trigger: 'blur' },
     { message: t('form.correct_address'), trigger: 'blur' }
   ],
-  pay: [{ required: true, message: t('form.pay'), trigger: 'blur' }]
+  pay: [{ required: true, message: t('form.pay'), trigger: 'blur' }],
+  note: [{ required: false }]
 }
 </script>

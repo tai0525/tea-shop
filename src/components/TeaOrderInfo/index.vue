@@ -15,7 +15,7 @@
     </el-descriptions>
     <template #footer>
       <el-button type="danger" @click="previous">上一步</el-button>
-      <el-button type="danger" @click="changePage('/orderfinish')">確認付款</el-button>
+      <el-button type="danger" @click="checkout">確認付款</el-button>
     </template>
   </el-card>
 </template>
@@ -23,13 +23,14 @@
 <script setup>
 import { defineProps, defineEmits, reactive } from 'vue'
 import { useI18n } from 'vue-i18n'
-import { useRouter } from 'vue-router'
 
 const { t } = useI18n()
-
-const emit = defineEmits(['previous'])
+const emit = defineEmits(['previous', 'checkout'])
 const previous = () => {
   emit('previous')
+}
+const checkout = () => {
+  emit('checkout')
 }
 const props = defineProps({
   data: {
@@ -37,11 +38,6 @@ const props = defineProps({
     default: () => {}
   }
 })
-const router = useRouter()
-const changePage = (link) => {
-  router.push(link)
-}
-
 const info = reactive({
   name: props.data?.name || '',
   email: props.data?.email || '',

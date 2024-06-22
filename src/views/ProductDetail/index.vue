@@ -3,7 +3,7 @@
     <el-row class="mb-2">
       <el-col :span="10">
         <el-breadcrumb separator="/">
-          <el-breadcrumb-item :to="{ path: '/' }">{{ t('home') }}</el-breadcrumb-item>
+          <el-breadcrumb-item :to="{ path: '/' }">{{ t('nav.home') }}</el-breadcrumb-item>
           <el-breadcrumb-item :to="{ path: '/products' }">
             {{ t('all_product') }}
           </el-breadcrumb-item>
@@ -53,10 +53,7 @@ const routeId = ref(Number(route.params.id))
 const product = computed(() => {
   return products.value.find((card) => card.id === Number(routeId.value))
 })
-const quantity = computed(() => {
-  const product = cartStore.cart.find((product) => product.id === routeId.value)
-  return product.quantity
-})
+const quantity = ref(1)
 
 const addToCart = (id) => {
   const product = products.value.find((product) => product.id === id)

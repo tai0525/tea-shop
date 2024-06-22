@@ -16,7 +16,7 @@
             color="#994e3d"
             :dark="isDark"
             @click="changePage('/')"
-            >{{ t('home') }}</el-button
+            >{{ t('nav.home') }}</el-button
           >
           <el-button
             class="text-xl"

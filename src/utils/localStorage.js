@@ -25,3 +25,11 @@ export const getCart = () => {
 export const removeCart = () => {
     localStorage.removeItem('Tea-Cart')
 }
+
+export const setOrder = (tableData, formData) => {
+    localStorage.setItem('order', JSON.stringify({ product: tableData.value, ...formData }));
+}
+
+export const getOrder = () => {
+    return JSON.parse(localStorage.getItem('order')) || {}
+}

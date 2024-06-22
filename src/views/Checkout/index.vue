@@ -34,7 +34,7 @@
         <el-col :span="12">
           <el-row>
             <el-col class="pb-5">
-              <tea-order-info :data="form.data" @previous="previous" />
+              <tea-order-info :data="form.data" @previous="previous" @checkout="checkout" />
             </el-col>
           </el-row>
         </el-col>
@@ -50,8 +50,11 @@ import TeaOrderForm from '@/components/TeaOrderForm/index.vue'
 import TeaOrderInfo from '@/components/TeaOrderInfo/index.vue'
 import { useCartStore } from '@/stores/cart.js'
 import { reactive } from 'vue'
-
+import { useRouter } from 'vue-router'
+import { setOrder } from '@/utils/localStorage'
 const cartStore = useCartStore()
+const router = useRouter()
+
 const { t } = useI18n()
 const step = ref(1)
 const form = reactive({
@@ -72,4 +75,8 @@ const tableData = computed(() => {
     price: product.price * product.quantity
   }))
 })
+const checkout = () => {
+  setOrder(tableData, form.data)
+  router.push('/orderfinish')
+}
 </script>
