@@ -31,5 +31,9 @@ export const setOrder = (tableData, formData) => {
 }
 
 export const getOrder = () => {
-    return JSON.parse(localStorage.getItem('order')) || {}
+    return JSON.parse(localStorage.getItem('order')) || []
+}
+
+export const removeOrder = () => {
+    localStorage.removeItem('order')
 }
