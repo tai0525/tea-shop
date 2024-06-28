@@ -92,7 +92,7 @@ import { useRouter } from 'vue-router'
 import { ElButton } from 'element-plus'
 import { ShoppingCart } from '@element-plus/icons-vue'
 import { useI18n } from 'vue-i18n'
-import { removeToken } from '@/utils/localStorage'
+import { removeToken, removeIsAdmin } from '@/utils/localStorage'
 import { useUserStore } from '@/stores/user'
 import { useCartStore } from '@/stores/cart'
 import { CircleClose } from '@element-plus/icons-vue'
@@ -121,6 +121,7 @@ const totalPrice = computed(() => {
 
 const logout = () => {
   removeToken()
+  removeIsAdmin()
   userStore.setIsLogin(false)
   ElMessage({
     message: t('message.logout_success'),

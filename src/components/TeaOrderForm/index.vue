@@ -1,28 +1,30 @@
 <template>
   <el-form :model="ruleForm" :rules="rules" label-width="100px">
-    <el-form-item label="E-mail" prop="email">
+    <el-form-item :label="t('info.email')" prop="email">
       <el-input v-model="ruleForm.email" />
     </el-form-item>
-    <el-form-item label="收件人姓名" prop="name">
+    <el-form-item :label="t('info.name')" prop="name">
       <el-input v-model="ruleForm.name" />
     </el-form-item>
-    <el-form-item label="收件人電話" prop="phone">
+    <el-form-item :label="t('info.phone')" prop="phone">
       <el-input v-model="ruleForm.phone" />
     </el-form-item>
-    <el-form-item label="收件人地址" prop="address">
+    <el-form-item :label="t('info.address')" prop="address">
       <el-input v-model="ruleForm.address" />
     </el-form-item>
-    <el-form-item label="付款方式" prop="pay">
-      <el-select v-model="ruleForm.pay" placeholder="請選擇付款方式">
-        <el-option label="信用卡付款" value="card"></el-option>
-        <el-option label="ATM 轉帳" value="atm"></el-option>
-        <el-option label="超商取貨付款" value="cvs"></el-option>
+    <el-form-item :label="t('info.pay')" prop="pay">
+      <el-select v-model="ruleForm.pay" :placeholder="t('form.option_pay')">
+        <el-option :label="t('form.credit')" :value="t('form.credit')" />
+        <el-option :label="t('form.atm')" :value="t('form.atm')" />
+        <el-option :label="t('form.cvs')" :value="t('form.cvs')" />
       </el-select>
     </el-form-item>
-    <el-form-item label="備註" prop="note">
+    <el-form-item :label="t('info.note')" prop="note">
       <el-input type="textarea" v-model="ruleForm.note" :rows="5" />
     </el-form-item>
-    <el-button type="danger" class="absolute right-0" @click="submit">送出訂單</el-button>
+    <el-button type="danger" class="absolute right-0" @click="submit">{{
+      t('form.submit_order')
+    }}</el-button>
   </el-form>
 </template>
 
@@ -41,10 +43,14 @@ const ruleForm = reactive({
   pay: '',
   note: ''
 })
+
 const submit = () => {
-  emit('submit', { ruleForm })
+  const orderTime = {
+    ...ruleForm,
+    time: new Date().toISOString()
+  }
+  emit('submit', { ruleForm: orderTime })
 }
-// 填寫訂單
 const rules = {
   email: [
     { required: true, message: t('form.email'), trigger: 'blur' },

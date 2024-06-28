@@ -1,8 +1,8 @@
 import server from '../index'
 
 export const userApi = {
-    login: async () => {
-        const data = await server.post('/login')
+    login: async (username) => {
+        const data = await server.post('/login', { username })
         return data
     }
 }

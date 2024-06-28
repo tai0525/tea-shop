@@ -45,7 +45,7 @@ import { useI18n } from 'vue-i18n'
 import { reactive, ref } from 'vue'
 import { useUserStore } from '@/stores/user'
 import { userApi } from '@/api/module/user'
-import { setToken } from '@/utils/localStorage'
+import { setToken, getIsAdmin } from '@/utils/localStorage'
 import { useRouter } from 'vue-router'
 import { ElMessage } from 'element-plus'
 
@@ -61,7 +61,7 @@ const validateForm = reactive({
 const userStore = useUserStore()
 
 const login = async () => {
-  const { code, data } = await userApi.login()
+  const { code, data } = await userApi.login(validateForm.email)
   if (code === 200) {
     const { token } = data
     // 更新數據
@@ -69,7 +69,12 @@ const login = async () => {
   }
   //重新渲染
   userStore.setIsLogin(true)
-  router.push('/')
+  const isAdmin = getIsAdmin()
+  if (isAdmin) {
+    router.push('/back/backproducts')
+  } else {
+    router.push('/')
+  }
 }
 const changePage = (link) => {
   router.push(link)

@@ -6,6 +6,7 @@
       </div>
     </template>
     <el-descriptions direction="vertical">
+      <el-descriptions-item :label="t('back.purchase_time')">{{ orderTime }}</el-descriptions-item>
       <el-descriptions-item :label="t('info.email')">{{ info.email }}</el-descriptions-item>
       <el-descriptions-item :label="t('info.name')">{{ info.name }}</el-descriptions-item>
       <el-descriptions-item :label="t('info.phone')">{{ info.phone }}</el-descriptions-item>
@@ -21,7 +22,7 @@
 </template>
 
 <script setup>
-import { defineProps, defineEmits, reactive } from 'vue'
+import { defineProps, defineEmits, reactive, computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 
 const { t } = useI18n()
@@ -32,6 +33,11 @@ const previous = () => {
 const checkout = () => {
   emit('checkout')
 }
+const orderTime = computed(() => {
+  if (!info.time) return ''
+  const date = new Date(info.time)
+  return date.toLocaleString()
+})
 const props = defineProps({
   data: {
     type: Object,
@@ -39,6 +45,7 @@ const props = defineProps({
   }
 })
 const info = reactive({
+  time: props.data?.time || '',
   name: props.data?.name || '',
   email: props.data?.email || '',
   phone: props.data?.phone || '',

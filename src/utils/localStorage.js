@@ -25,15 +25,21 @@ export const getCart = () => {
 export const removeCart = () => {
     localStorage.removeItem('Tea-Cart')
 }
-
-export const setOrder = (tableData, formData) => {
-    localStorage.setItem('order', JSON.stringify({ product: tableData.value, ...formData }));
+export const setOrder = (data) => {
+    localStorage.setItem('order', JSON.stringify(data));
 }
-
 export const getOrder = () => {
     return JSON.parse(localStorage.getItem('order')) || []
 }
-
 export const removeOrder = () => {
     localStorage.removeItem('order')
+}
+export const setIsAdmin = (isAdmin) => {
+    localStorage.setItem('isAdmin', JSON.stringify(isAdmin));
+}
+export const getIsAdmin = () => {
+    return JSON.parse(localStorage.getItem('isAdmin'));
+}
+export const removeIsAdmin = () => {
+    localStorage.removeItem('isAdmin');
 }

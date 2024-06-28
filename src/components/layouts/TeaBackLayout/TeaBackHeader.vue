@@ -1,46 +1,19 @@
 <template>
-  <el-menu :default-active="activeIndex" class="bg-main font-bold" mode="horizontal">
-    <el-menu-item
-      class="text-xl"
-      v-for="item in menuList"
-      :key="item.id"
-      :index="id"
-      @click="changePage(item.link)"
-      >{{ item.title }}</el-menu-item
-    >
-  </el-menu>
+  <el-header class="relative text-right">
+    <div class="toolbar">
+      <el-dropdown>
+        <el-icon style="margin-right: 8px; margin-top: 1px">
+          <setting />
+        </el-icon>
+        <template #dropdown>
+          <el-dropdown-menu>
+            <el-dropdown-item>View</el-dropdown-item>
+            <el-dropdown-item>Add</el-dropdown-item>
+            <el-dropdown-item>Delete</el-dropdown-item>
+          </el-dropdown-menu>
+        </template>
+      </el-dropdown>
+      <span>Tom</span>
+    </div>
+  </el-header>
 </template>
-
-<script setup>
-import { ref } from 'vue'
-import { useRouter } from 'vue-router'
-import { useI18n } from 'vue-i18n'
-
-const { t } = useI18n()
-const router = useRouter()
-const changePage = (link) => {
-  router.push(link)
-}
-const menuList = ref([
-  {
-    id: 1,
-    title: t('back.products'),
-    link: '/back/backproducts'
-  },
-  {
-    id: 2,
-    title: t('back.orders'),
-    link: '/back/orders'
-  },
-  {
-    id: 3,
-    title: t('back.sales'),
-    link: '/back/sales'
-  },
-  {
-    id: 4,
-    title: t('logout'),
-    link: '/login'
-  }
-])
-</script>

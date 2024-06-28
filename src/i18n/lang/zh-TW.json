@@ -66,7 +66,12 @@
     "correct_length": "長度不能超過10碼",
     "address": "請輸入地址",
     "correct_address": "請輸入正確的地址",
-    "pay": "付款方式為必填"
+    "pay": "付款方式為必填",
+    "option_pay": "請選擇付款方式",
+    "credit": "信用卡付款",
+    "atm": "ATM 轉帳",
+    "cvs": "超商取貨付款",
+    "submit_order": "送出訂單"
   },
   "info": {
     "email": "E-mail",
@@ -94,6 +99,7 @@
     "purchase_items": "購買項目",
     "amount_payable": "應付金額",
     "not_found": "此頁面不存在",
-    "back": "返回"
+    "back": "返回",
+    "delete": "刪除"
   }
 }

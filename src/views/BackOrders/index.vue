@@ -1,22 +1,18 @@
 <template>
-  <el-header style="text-align: right; font-size: 12px">
-    <h1 class="text-center text-2xl font-semibold pt-4">{{ t('back.orders_list') }}</h1>
-    <el-button plain class="mb-4" @click="open">{{ t('back.delete_allorders') }}</el-button>
+  <el-header class="bg-main flex items-center justify-end">
+    <el-button type="danger" :icon="Delete" @click="open">{{
+      t('back.delete_allorders')
+    }}</el-button>
   </el-header>
   <el-main>
-    <el-scrollbar>
-      <el-table :data="tableData" stripe style="width: 100%">
-        <el-table-column prop="purchaseTime" :label="t('back.purchase_time')" />
-        <el-table-column prop="email" :label="t('info.email')" />
-        <el-table-column prop="items" :label="t('back.purchase_items')" />
-        <el-table-column prop="totalAmount" :label="t('back.amount_payable')" />
-        <el-table-column :label="t('product_edit')">
-          <template #default="scope">
-            <el-button @click="editOrder(scope.row)">Edit</el-button>
-          </template>
-        </el-table-column>
-      </el-table>
-    </el-scrollbar>
+    <h1 class="text-center text-2xl font-semibold pb-4">{{ t('back.orders_list') }}</h1>
+    <el-table :data="tableData" stripe height="350" style="width: 100%">
+      <el-table-column prop="time" :label="t('back.purchase_time')" />
+      <el-table-column prop="email" :label="t('info.email')" />
+      <el-table-column prop="name" :label="t('info.name')" />
+      <el-table-column prop="items" :label="t('back.purchase_items')" />
+      <el-table-column prop="totalAmount" :label="t('back.amount_payable')" />
+    </el-table>
   </el-main>
 </template>
 
@@ -24,6 +20,7 @@
 import { ref, onMounted } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { ElMessage, ElMessageBox } from 'element-plus'
+import { Delete } from '@element-plus/icons-vue'
 import { getOrder, removeOrder } from '@/utils/localStorage'
 
 const { t } = useI18n()
@@ -32,14 +29,13 @@ const tableData = ref([])
 const getOrderList = () => {
   const orderData = getOrder()
   if (orderData) {
-    tableData.value = [
-      {
-        purchaseTime: new Date().toLocaleString(),
-        email: orderData.email,
-        items: orderData.product.map((item) => `${item.name} (${item.quantity})`).join(', '),
-        totalAmount: orderData.product.reduce((total, item) => total + item.price, 0)
-      }
-    ]
+    tableData.value = orderData.map((order) => ({
+      time: new Date(order.time).toLocaleString(),
+      email: order.email,
+      name: order.name,
+      items: order.product.map((item) => `${item.name} (${item.quantity})`).join(', '),
+      totalAmount: order.product.reduce((total, item) => total + item.price, 0)
+    }))
   }
 }
 
@@ -64,10 +60,6 @@ const open = () => {
       })
     })
 }
-
-// const editOrder = (row) => {
-//   console.log('Editing order:', row)
-// }
 
 onMounted(() => {
   getOrderList()

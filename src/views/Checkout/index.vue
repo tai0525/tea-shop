@@ -51,7 +51,8 @@ import TeaOrderInfo from '@/components/TeaOrderInfo/index.vue'
 import { useCartStore } from '@/stores/cart.js'
 import { reactive } from 'vue'
 import { useRouter } from 'vue-router'
-import { setOrder } from '@/utils/localStorage'
+import { setOrder, getOrder, setCart } from '@/utils/localStorage'
+
 const cartStore = useCartStore()
 const router = useRouter()
 
@@ -76,7 +77,9 @@ const tableData = computed(() => {
   }))
 })
 const checkout = () => {
-  setOrder(tableData, form.data)
+  setOrder([...getOrder(), { ...form.data, product: tableData.value }])
+  setCart([])
+  cartStore.setToCart([])
   router.push('/orderfinish')
 }
 </script>

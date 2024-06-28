@@ -10,7 +10,8 @@ export const backRoutes = [
                 name: 'Backproducts',
                 component: () => import('@/views/BackProducts/index.vue'),
                 meta: {
-                    title: '產品管理'
+                    title: '產品管理',
+                    requiresAuth: true
                 }
             },
             {
@@ -18,7 +19,8 @@ export const backRoutes = [
                 name: 'Orders',
                 component: () => import('@/views/BackOrders/index.vue'),
                 meta: {
-                    title: '訂單管理'
+                    title: '訂單管理',
+                    requiresAuth: true
                 }
             },
             {
@@ -26,7 +28,8 @@ export const backRoutes = [
                 name: 'Sales',
                 component: () => import('@/views/BackSales/index.vue'),
                 meta: {
-                    title: '銷售量'
+                    title: '銷售量',
+                    requiresAuth: true
                 }
             },
             {
@@ -34,7 +37,8 @@ export const backRoutes = [
                 name: 'Backnotfound',
                 component: () => import('@/views/BackNotFound/index.vue'),
                 meta: {
-                    title: '404 Not Found'
+                    title: '404 Not Found',
+                    requiresAuth: true
                 }
             }
         ]
