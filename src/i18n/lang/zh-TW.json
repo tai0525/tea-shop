@@ -31,8 +31,8 @@
   "add_to_cart": "已加入購物車",
   "go_shopping": "購物去",
   "go_checkout": "前往結帳",
-  "all_product": "所有商品",
-  "product_detail": "商品詳細頁",
+  "all_product": "所有產品",
+  "product_detail": "產品詳細頁",
   "checkout": "結帳頁",
   "order_finish": "訂購完成",
   "no_product": "目前無商品",
@@ -41,9 +41,12 @@
   "receipt_info": "您的收件資訊",
   "product_info": "產品資訊",
   "product_id": "id",
-  "product_name": "商品名稱",
-  "product_category": "分類",
-  "product_price": "售價",
+  "product_name": "產品名稱",
+  "product_category": "產品分類",
+  "product_image": "產品圖片",
+  "product_price": "產品售價",
+  "product_size": "產品規格",
+  "product_desc": "產品描述",
   "product_edit": "編輯",
   "tea_info": {
     "material_tea": "原料:茶葉",
@@ -100,6 +103,7 @@
     "amount_payable": "應付金額",
     "not_found": "此頁面不存在",
     "back": "返回",
-    "delete": "刪除"
+    "delete": "刪除",
+    "edit_product": "編輯產品"
   }
 }

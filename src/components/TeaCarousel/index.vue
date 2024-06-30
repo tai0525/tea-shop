@@ -1,33 +1,45 @@
 <template>
-  <el-carousel>
-    <el-carousel-item v-for="item in 4" :key="item">
-      <img :src="image" alt="" />
-      <span>{{ label }}</span>
-      <p>{{ title }}</p>
-      <span>{{ price }}</span>
-    </el-carousel-item>
-  </el-carousel>
+  <div class="block text-center">
+    <h1 class="text-main text-3xl font-bold mt-5">熱門商品</h1>
+    <el-carousel :interval="3000" type="card" height="400px">
+      <el-carousel-item
+        v-for="(product, index) in products"
+        :key="index"
+        class="flex justify-center items-center"
+      >
+        <tea-product-card
+          class="bg-secondary"
+          @cardClick="cardClick(product)"
+          :image="product.image"
+          :name="product.name"
+          :price="product.price"
+        />
+      </el-carousel-item>
+    </el-carousel>
+  </div>
 </template>
- 
-  //https://images.unsplash.com/photo-1714423616168-e9a6f38b6806?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyMnx8fGVufDB8fHx8fA%3D%3D
-  <script setup>
-import { defineProps } from 'vue'
-defineProps({
-  image: {
-    type: String,
-    default: ''
-  },
-  title: {
-    type: String,
-    default: ''
-  },
-  price: {
-    type: String,
-    default: ''
-  }
+
+<script setup>
+import { ref, onMounted } from 'vue'
+import TeaProductCard from '@/components/TeaProductCard/index.vue'
+import { getProducts } from '@/utils/localStorage'
+import { useRouter } from 'vue-router'
+
+const products = ref([])
+
+const router = useRouter()
+
+const fetchProducts = () => {
+  products.value = getProducts()
+}
+
+const cardClick = (product) => {
+  router.push({ name: 'ProductDetail', params: { id: product.id } })
+}
+
+onMounted(() => {
+  fetchProducts()
 })
 </script>
 
-<style lang="css" scoped>
-</style>
   
