@@ -43,3 +43,9 @@ export const getIsAdmin = () => {
 export const removeIsAdmin = () => {
     localStorage.removeItem('isAdmin');
 }
+export const setLang = (lang) => {
+    localStorage.setItem('language', lang)
+}
+export const getLang = () => {
+    return localStorage.getItem('language')
+}

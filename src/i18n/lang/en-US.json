@@ -1,7 +1,11 @@
 {
-  "login": "Log in",
-  "logout": "Log out",
-  "first_login": "Please Login",
+  "login": {
+    "login": "Login",
+    "logout": "Logout",
+    "first_login": "Please Login",
+    "account": "Account",
+    "password": "Password"
+  },
   "message": {
     "login_success": "Login successfully",
     "logout_success": "Logout successfully",
@@ -11,39 +15,73 @@
   },
   "nav": {
     "home": "Home",
-    "about": "About Us",
+    "about_us": "About Us",
     "tea_knowledge": "Tea Knowledge"
   },
+  "banner": {
+    "taiwan_tea": "100% Taiwanese tea",
+    "one_heart": "Persist in harvesting tea leaves with one heart and two leaves on sunny days. \nTaiwan's local tea farmers, natural and healthy without any additives or mixed tea.",
+    "pursuit": "There is no end to the pursuit of good tea",
+    "tea_good": "The tea should be good and the price should be attractive. \nWhether you are a beginner or a gourmet, you can easily get good tea from Taiwan."
+  },
+  "chinji": "ChinJi Tea Shop",
+  "pop_product": "Popular Products",
+  "contact_us": "Contact Us",
   "submit": "Submit",
-  "contact": "Contact Us",
   "contact_content": "If you have any questions, please contact us.",
-  "shop_name": "ChinJi Tea Shop",
   "search_tea": "Search Tea",
   "slogan": "Classic tea flavor, ChinJi’s first choice.",
-  "click": "Click me",
+  "click_me": "Click me",
   "add_cart": "Add To Cart",
-  "added_to_cart": "Added To Cart!",
   "clear_cart": "Clear Shopping Cart",
-  "go_checkout": "Checkout",
   "cart": "Shopping Cart",
+  "added_to_cart": "Added To Cart!",
   "go_shopping": "Go Shopping",
+  "go_checkout": "Go to Checkout",
   "all_product": "All Products",
+  "product_detail": "Product Detail",
+  "checkout": "Checkout",
+  "previous": "Previous",
+  "confirm_pay": "Confirm payment",
   "no_product": "No Product",
   "total": "Total",
   "order_content": "Order Content",
   "receipt_info": "Your Receipt Information",
   "product_info": "Product Information",
   "product_id": "id",
-  "material_tea": "Material: Tea",
-  "origin_tw": "Origin: Taiwan",
-  "exp_date": "Expiration Date: Two Years",
-  "storage_method": "Storage method: Please store in dry place, avoid direct sunlight, and drink as soon as possible after opening.",
+  "product_name": "Product Name",
+  "product_quan": "Product Quantity",
+  "product_category": "Product Category",
+  "product_image": "Product Image",
+  "product_price": "Product Price",
+  "product_size": "Product Size",
+  "product_desc": "Product Description",
+  "product_edit": "Edit",
+  "order_finish": {
+    "thanks": "Thank you for your purchase and support",
+    "ship": "We will ship the goods to you as soon as possible, please pay attention to the delivery notification at any time!"
+  },
+  "product_menu": {
+    "all": "All Products",
+    "alishan": "Alishan Tea",
+    "oolong": "DongDing oolong tea",
+    "black": "Taiwan Black Tea",
+    "green": "Taiwan Green Tea"
+  },
+  "tea_info": {
+    "material_tea": "Material: Tea",
+    "origin_tw": "Origin: Taiwan",
+    "exp_date": "Expiration Date: Two Years",
+    "storage_method": "Storage method: Please store in dry place, avoid direct sunlight, and drink as soon as possible after opening."
+  },
   "make_tea": {
     "tips": "Tips for making tea",
     "boiling": "Boiling water 100 degrees.",
     "pot_body": "The amount of tea is about 1/2~2/3 of the pot body.",
     "rush": "The first rush is 30 seconds, the second rush is 20 seconds, and the third rush is 40 seconds."
   },
+  "fill_order": "Fill Order",
+  "complete_order": "Complete Order",
   "form": {
     "email": "Please enter your email address",
     "correct_email": "Please enter correct email address",
@@ -53,23 +91,41 @@
     "correct_length": "Length cannot exceed 10 yards",
     "address": "Please enter your address",
     "correct_address": "Please enter correct address",
-    "pay": "Payment method is required"
+    "pay": "Payment method is required",
+    "option_pay": "Please select payment method",
+    "credit": "Credit Card",
+    "atm": "ATM",
+    "cvs": "Convenience Store Pickup and Payment",
+    "submit_order": "Submit Order"
   },
   "info": {
     "email": "E-mail",
-    "name": "Recipient Name",
-    "phone": "Recipient Phone",
-    "address": "Recipient Address",
-    "pay": "Payment Method",
+    "name": "Name",
+    "phone": "Phone",
+    "address": "Address",
+    "pay": "Payment",
     "note": "Note"
   },
   "back": {
     "products": "Product Management",
+    "products_list": "Products List",
     "orders": "Order Management",
+    "orders_list": "Orders List",
     "sales": "Sales Volume",
     "new_product": "Build new product",
     "add_product": "Add new product",
     "confirm": "Confirm",
-    "cancel": "Cancel"
+    "cancel": "Cancel",
+    "delete_allorders": "Delete All Orders",
+    "sure_delete": "Delete all orders?",
+    "delete_completed": "Deleted successfully",
+    "delete_cancel": "Undelete",
+    "purchase_time": "Purchase time",
+    "purchase_items": "Purchase Items",
+    "amount_payable": "Amounts payable",
+    "not_found": "This page does not exist",
+    "back": "Return",
+    "delete": "Delete",
+    "edit_product": "Edit Product"
   }
 }

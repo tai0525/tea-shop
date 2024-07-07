@@ -23,6 +23,10 @@
             >{{ item.title }}</el-button
           >
         </li>
+        <li class="mx-4 my-4 md:my-0">
+          <el-button v-if="locale === 'zh-TW'" @click="changeLanguage('en-US')"> En </el-button>
+          <el-button v-else @click="changeLanguage('zh-TW')"> 中 </el-button>
+        </li>
       </ul>
     </nav>
   </div>
@@ -92,13 +96,18 @@ import { useRouter } from 'vue-router'
 import { ElButton } from 'element-plus'
 import { ShoppingCart } from '@element-plus/icons-vue'
 import { useI18n } from 'vue-i18n'
-import { removeToken, removeIsAdmin } from '@/utils/localStorage'
+import { removeToken, removeIsAdmin, setLang } from '@/utils/localStorage'
 import { useUserStore } from '@/stores/user'
 import { useCartStore } from '@/stores/cart'
 import { CircleClose } from '@element-plus/icons-vue'
 import { ElMessage } from 'element-plus'
 
-const { t } = useI18n()
+const { t, locale } = useI18n()
+const changeLanguage = (lang) => {
+  locale.value = lang
+  setLang(lang)
+}
+
 const visible = ref(false)
 const { removeFromCart } = inject('data')
 const { clearCart } = inject('data')

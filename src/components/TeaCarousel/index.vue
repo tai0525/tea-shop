@@ -1,6 +1,6 @@
 <template>
   <div class="block text-center">
-    <h1 class="text-main text-3xl font-bold mt-5">熱門商品</h1>
+    <h1 class="text-main text-3xl font-bold mt-5">{{ t('pop_product') }}</h1>
     <el-carousel :interval="3000" type="card" height="400px">
       <el-carousel-item
         v-for="(product, index) in products"
@@ -24,6 +24,9 @@ import { ref, onMounted } from 'vue'
 import TeaProductCard from '@/components/TeaProductCard/index.vue'
 import { getProducts } from '@/utils/localStorage'
 import { useRouter } from 'vue-router'
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
 
 const products = ref([])
 

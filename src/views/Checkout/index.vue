@@ -3,8 +3,8 @@
   <!-- 訂單進度 -->
   <div class="mb-5">
     <el-steps :active="step" :space="400" align-center class="justify-center">
-      <el-step title="填寫訂單" />
-      <el-step title="完成訂單" />
+      <el-step :title="t('fill_order')" />
+      <el-step :title="t('complete_order')" />
     </el-steps>
   </div>
   <!-- 訂單資訊 -->

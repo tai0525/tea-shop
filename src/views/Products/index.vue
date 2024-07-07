@@ -2,7 +2,7 @@
   <div class="container">
     <el-row class="items-center my-5" :gutter="20">
       <el-col :span="4">
-        <h5 class="my-2 absolute top-0">產品分類</h5>
+        <h5 class="my-2 absolute top-0">{{ t('product_category') }}</h5>
         <el-menu class="el-menu-vertical-demo absolute top-10">
           <el-menu-item
             v-for="item in categoryMenu"
@@ -105,7 +105,7 @@ const addToCart = (id) => {
     ])
   }
   ElMessage({
-    message: t('add_to_cart'),
+    message: t('added_to_cart'),
     type: 'success'
   })
 }

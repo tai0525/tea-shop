@@ -6,9 +6,9 @@
       </div>
     </template>
     <el-table :data="data" height="250" style="width: 100%">
-      <el-table-column prop="name" label="商品名稱" width="180" />
-      <el-table-column prop="quantity" label="數量" width="180" />
-      <el-table-column prop="price" label="價格" />
+      <el-table-column prop="name" :label="t('product_name')" width="180" />
+      <el-table-column prop="quantity" :label="t('product_quan')" width="180" />
+      <el-table-column prop="price" :label="t('product_price')" />
     </el-table>
     <template #footer>
       <div class="card-footer font-semibold pt-3 text-end">

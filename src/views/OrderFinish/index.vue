@@ -4,8 +4,8 @@
       <el-row class="flex justify-center items-center">
         <div class="text-center">
           <el-icon class="" :size="110" color="#994e3d"><Van /></el-icon>
-          <h3 class="text-3xl font-bold my-3">感謝您的購買與支持</h3>
-          <p class="text-xl font-semibold mb-10">我們將盡快為您出貨，還請隨時留意宅配通知！</p>
+          <h3 class="text-3xl font-bold my-3">{{ t('order_finish.thanks') }}</h3>
+          <p class="text-xl font-semibold mb-10">{{ t('order_finish.ship') }}</p>
         </div>
       </el-row>
       <el-row class="justify-center py-5">

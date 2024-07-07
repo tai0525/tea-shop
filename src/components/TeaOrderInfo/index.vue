@@ -15,8 +15,8 @@
       <el-descriptions-item :label="t('info.note')">{{ info.note }}</el-descriptions-item>
     </el-descriptions>
     <template #footer>
-      <el-button type="danger" @click="previous">上一步</el-button>
-      <el-button type="danger" @click="checkout">確認付款</el-button>
+      <el-button type="danger" @click="previous">{{ t('previous') }}</el-button>
+      <el-button type="danger" @click="checkout">{{ t('confirm_pay') }}</el-button>
     </template>
   </el-card>
 </template>

@@ -18,7 +18,14 @@
     "about_us": "關於我們",
     "tea_knowledge": "茶葉知識"
   },
+  "banner": {
+    "taiwan_tea": "百分之百台灣茶",
+    "one_heart": "堅持晴天採收一心二葉茶青，\n台灣在地茶農，天然健康，\n絕無添加物，無混茶。",
+    "pursuit": "追求好茶，沒有終點。",
+    "tea_good": "茶好，價格也要漂亮，\n不論初學者或饕客，\n台灣好茶，都能輕鬆入手。"
+  },
   "chinji": "沁記茶行",
+  "pop_product": "熱門商品",
   "contact_us": "聯絡我們",
   "submit": "送出",
   "contact_content": "有任何問題，歡迎與我們聯繫。",
@@ -28,13 +35,14 @@
   "add_cart": "加入購物車",
   "clear_cart": "清空購物車",
   "cart": "購物車",
-  "add_to_cart": "已加入購物車",
+  "added_to_cart": "已加入購物車",
   "go_shopping": "購物去",
   "go_checkout": "前往結帳",
   "all_product": "所有產品",
   "product_detail": "產品詳細頁",
   "checkout": "結帳頁",
-  "order_finish": "訂購完成",
+  "previous": "上一步",
+  "confirm_pay": "確認付款",
   "no_product": "目前無商品",
   "total": "總計",
   "order_content": "訂單內容",
@@ -42,12 +50,24 @@
   "product_info": "產品資訊",
   "product_id": "id",
   "product_name": "產品名稱",
+  "product_quan": "產品數量",
   "product_category": "產品分類",
   "product_image": "產品圖片",
   "product_price": "產品售價",
   "product_size": "產品規格",
   "product_desc": "產品描述",
   "product_edit": "編輯",
+  "order_finish": {
+    "thanks": "感謝您的購買與支持",
+    "ship": "我們將盡快為您出貨，還請隨時留意宅配通知！"
+  },
+  "product_menu": {
+    "all": "所有產品",
+    "alishan": "阿里山茶系列",
+    "oolong": "凍頂烏龍茶系列",
+    "black": "台灣紅茶系列",
+    "green": "台灣綠茶系列"
+  },
   "tea_info": {
     "material_tea": "原料:茶葉",
     "origin_tw": "產地:台灣",
@@ -60,6 +80,8 @@
     "pot_body": "約壺身1/2∼2/3的茶量。",
     "rush": " 一沖30秒 二沖20秒 三沖40秒。"
   },
+  "fill_order": "填寫訂單",
+  "complete_order": "完成訂單",
   "form": {
     "email": "請輸入E-mail",
     "correct_email": "請輸入正確的E-mail",
