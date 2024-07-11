@@ -127,5 +127,10 @@
     "back": "Return",
     "delete": "Delete",
     "edit_product": "Edit Product"
+  },
+  "knowledge": {
+    "name": "Tea's Name",
+    "category": "Tea's Category",
+    "processing": "Processing Method"
   }
 }

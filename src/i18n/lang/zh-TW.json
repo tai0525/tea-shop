@@ -127,5 +127,10 @@
     "back": "返回",
     "delete": "刪除",
     "edit_product": "編輯產品"
+  },
+  "knowledge": {
+    "name": "茶葉名稱",
+    "category": "茶葉種類",
+    "processing": "加工方式"
   }
 }
