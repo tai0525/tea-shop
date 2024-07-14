@@ -9,29 +9,55 @@
 
 ### 專案畫面
 
-- ![首頁](https://upload.cc/i1/2024/07/13/4B6K9y.png)
-- 頁面功能
+### 首頁
+
+![tea-shop](https://i.postimg.cc/XYDjY4BM/tea-shop-front.png)
+
+### 搜尋
+
+![tea-shop](https://i.postimg.cc/Fsjt55pj/tea-shop-search.png)
+
+### 購物車
+
+![tea-shop](https://i.postimg.cc/rFcTpwKh/tea-shop-shoppingcart.png)
+
+### 產品詳細頁
+
+![tea-shop](https://i.postimg.cc/vZ4x0hbx/tea-shop-productdetail.png)
+
+### 結帳頁-填寫訂單
+
+![tea-shop](https://i.postimg.cc/ydp2V73N/tea-shop-checkoutorder.png)
+
+### 結帳頁-完成訂單
+
+![tea-shop](https://i.postimg.cc/gkyQJC5m/tea-shop-checkoutcompleteorder.png)
+
+### 後台-產品管理
+
+![tea-shop](https://i.postimg.cc/053T6Gc2/back-products.png)
+
+### 後台-訂單管理
+
+![tea-shop](https://i.postimg.cc/RFPN1pqY/back-orders.png)
 
 ### 專案功能
 
 1. 前台
 
+- 登入/登出
+- 搜尋商品
+- 電商商品展示
+- 商品購物車功能:
+  - 加入/移除功能
+  - 填寫訂單
+  - 結帳
+
 2. 後台
 
-- 以頁為單位去寫功能
-- 專案後續想要如何優化
-- 例如
-  - 驗證碼註冊/登入
-  - 瀏覽/搜尋/收藏商品
-  - 商品購物車功能:
-    - 加入/移除功能
-    - 填寫訂單
-    - 結帳
-    - 瀏覽訂單
-    - 能看到支付/運送狀態的訂單狀態
-    - 管理員權限可以確認訂單狀況
-
-### 後續優化(選填)
+- 新增/刪除/編輯產品
+- 瀏覽/刪除訂單
+- Token-baseed 驗證登入/登出功能
 
 ### 專案安裝流程
 
