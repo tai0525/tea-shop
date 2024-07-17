@@ -41,11 +41,14 @@
 
 ![tea-shop](https://i.postimg.cc/RFPN1pqY/back-orders.png)
 
+### 後台-銷售量
+
+![tea-shop](https://i.postimg.cc/Y9ypFk1N/tea-shop-sales.png)
+
 ### 專案功能
 
 1. 前台
 
-- 登入/登出
 - 搜尋商品
 - 電商商品展示
 - 商品購物車功能:
@@ -57,6 +60,7 @@
 
 - 新增/刪除/編輯產品
 - 瀏覽/刪除訂單
+- 瀏覽銷售量/營業額
 - Token-baseed 驗證登入/登出功能
 
 ### 專案安裝流程
